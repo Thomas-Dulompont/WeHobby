@@ -108,6 +108,7 @@ struct Friends : Identifiable {
     var isCurrentUser: Bool
     var favoriteCategory : [Categoriz]
     var isOnline: Bool
+    var userPicture : String
 }
 
 struct Chat : Identifiable {
