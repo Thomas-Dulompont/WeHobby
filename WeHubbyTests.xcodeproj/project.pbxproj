@@ -45,6 +45,7 @@
 			children = (
 				5FD2DB49285C6ED3003F3A69 /* Models.swift */,
 				5FD2DB4B285C7DA8003F3A69 /* DataBase.swift */,
+				5FD2DB4D285C7DCC003F3A69 /* Elements */,
 				5FCBCA70285C64DD00B214DA /* WeHubbyTests */,
 				5FCBCA6F285C64DD00B214DA /* Products */,
 			);
@@ -63,7 +64,6 @@
 			children = (
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
-				5FD2DB4D285C7DCC003F3A69 /* Elements */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
 			);

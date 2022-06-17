@@ -19,7 +19,7 @@ enum Categories: String {
     case society = "Jeux de société"
     case artist = "Activités artistiques"
     case cook = "Activités cullinaires"
-    case house = "Bricolage"
+    case brico = "Bricolage"
     case garden = "Jardinage"
     case deco = "Décoration"
     case lecture = "Lecture et Écriture"
