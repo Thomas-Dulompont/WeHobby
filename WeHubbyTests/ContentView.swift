@@ -15,7 +15,7 @@ struct ContentView: View {
                     Label("Loisirs", systemImage: "dice.fill")
                 }
             
-            Text("Evenements")
+            MapView()
                 .tabItem {
                     Label("Évènements", systemImage: "theatermasks.fill")
                 }
@@ -23,7 +23,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Amis", systemImage: "person.2.fill")
                 }
-            Text("Profil")
+            ProfilAmis()
                 .tabItem {
                     Label("Mon profil", systemImage: "person.circle.fill")
                 }
