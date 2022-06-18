@@ -1,5 +1,29 @@
 
-# WeHobby
+# 🇬🇧 WeHobby (EN)
+
+WeHobby is an IOS application which aims to facilitate the discovery of new hobbies while creating links between users.
+
+## The issues targeted
+
+- How to discover new activities
+- How to meet people who share the same Hobbies
+- How to discuss common activities
+
+## Goals :
+
+- **Discovering new hobbies :**
+Our main axis, Make the discovery of leisure simple and fun, That is to say, offer a solution to navigate between leisure and if you like a hobby, a clear and concise discovery to make you want to start.
+
+- **Support in the community :**
+Our secondary axis Being able to exchange on a hobby and receive advice, As we also emphasize the human side of a hobby, we facilitate the interaction between users using a comment profile on hobbies and cat.
+
+- **Facilitate meetings :**
+The last axis is the possibility of creating and joining events on a hobby that interests us or to see the events available in a geo-locate way and to join them to continue to create a link outside the application.
+
+## Project
+WeHobby is our red thread of training called **Apple Foundation Program Extended** which aims to make us discover and learn the right methods as Designer Developer of IOS applications.
+
+# 🇫🇷 WeHobby (FR)
 
 WeHobby est une application IOS qui à pour but de faciliter la découverte de nouveaux Loisirs tout en créant du lien entre les utilisateurs.
 
