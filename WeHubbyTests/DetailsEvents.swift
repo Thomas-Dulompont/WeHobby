@@ -125,15 +125,9 @@ struct DetailsEvents: View {
                     .padding(.trailing,200)
                 }
             }
-            .navigationTitle("")
-            .toolbar {
-                HStack{
-                    Text(event.eventName)
-                        .foregroundColor(.accentColor)
-                        .font(.system(size: 25))
-                        .frame(width: width)
-                }
-            }
+            .navigationBarHidden(true)
+                
+            
         }
     }
 }

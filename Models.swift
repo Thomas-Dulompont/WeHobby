@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 
 //enum Loisirs
@@ -70,7 +71,11 @@ struct Tutos : Identifiable {
 
 // Events
 
-struct Events : Identifiable {
+struct Events : Identifiable, Equatable {
+    static func == (lhs: Events, rhs: Events) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     var id = UUID()
     var eventName : String
     var eventHobby : Hobbies
@@ -82,6 +87,7 @@ struct Events : Identifiable {
     var participants : [Friends]
     var participate : Bool
     var comms : [Comments]
+    var coordonnnes : CLLocationCoordinate2D
 }
 
 

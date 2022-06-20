@@ -20,7 +20,7 @@ struct ProfilAmis: View {
     
     @State var selectedTab: ViewButtonBis = .photos
     
-    @State var currentTab = "Découvrir"
+    @State var currentTab = "Photos"
     
     @State var tabBarOffset: CGFloat = 0
     

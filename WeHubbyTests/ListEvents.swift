@@ -11,15 +11,17 @@ struct ListEvents: View {
     
     var width: CGFloat = UIScreen.main.bounds.width - 50
 
+    
     var body: some View {
         
         NavigationView {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
+                
             ForEach(evenements) { event in
-                NavigationLink(destination: {
-                    DetailsEvents(event: event)
-                }, label: {
+                
+               
+                    
                 VStack(spacing: 24){
                     Image(event.eventPicture)
                         .resizable()
@@ -34,18 +36,23 @@ struct ListEvents: View {
                             Text(event.eventName)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 24))
+                                .foregroundColor(.black)
                             HStack(spacing: 16){
                             Text("📍 \(event.eventPlace)")
                                     .fontWeight(.thin)
+                                    .foregroundColor(.black)
+
                                  
                             Text("📅 \(event.eventDate)")
                                 .fontWeight(.thin)
+                                .foregroundColor(.black)
+
                             }
                         }
                         
-                        Button {
-                            
-                        } label: {
+                        NavigationLink(destination: {
+                            DetailsEvents(event: event)
+                        }, label: {
                             Text("Voir")
                                 .font(.system(size: 20))
                                 .fontWeight(.semibold)
@@ -55,18 +62,19 @@ struct ListEvents: View {
                                 .background(Color.accentColor)
                                 .cornerRadius(28)
                                 .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
-                        }
+                        })
                     }
                     Divider().frame(width: width)
                         .padding(.bottom,20)
                 }
-            })
+            
             }
             }
                                
         }
-        
+        .navigationBarHidden(true)
             }
+        
         
     }
 }

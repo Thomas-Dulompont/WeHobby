@@ -10,7 +10,6 @@
 		5F818194285CB865003E72B2 /* ListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818193285CB865003E72B2 /* ListEvents.swift */; };
 		5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818195285CC4AB003E72B2 /* DetailsEvents.swift */; };
 		5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818197285CCFFD003E72B2 /* ProfilAmis.swift */; };
-		5F81819A285CF7CF003E72B2 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818199285CF7CF003E72B2 /* test.swift */; };
 		5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */; };
 		5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */; };
 		5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA73285C64DD00B214DA /* ContentView.swift */; };
@@ -21,13 +20,16 @@
 		5FD2DB4A285C6ED3003F3A69 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2DB49285C6ED3003F3A69 /* Models.swift */; };
 		5FD2DB4C285C7DA8003F3A69 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2DB4B285C7DA8003F3A69 /* DataBase.swift */; };
 		5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6A285DE86D0056D575 /* MapView.swift */; };
+		5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */; };
+		5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6E28605E680056D575 /* OnlyMapView.swift */; };
+		5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */; };
+		5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC72286076D00056D575 /* listeHobby.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5F818193285CB865003E72B2 /* ListEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEvents.swift; sourceTree = "<group>"; };
 		5F818195285CC4AB003E72B2 /* DetailsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEvents.swift; sourceTree = "<group>"; };
 		5F818197285CCFFD003E72B2 /* ProfilAmis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilAmis.swift; sourceTree = "<group>"; };
-		5F818199285CF7CF003E72B2 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesFriends.swift; sourceTree = "<group>"; };
 		5FCBCA6E285C64DD00B214DA /* WeHobby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeHobby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeHubbyTestsApp.swift; sourceTree = "<group>"; };
@@ -39,6 +41,10 @@
 		5FD2DB49285C6ED3003F3A69 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5FD2DB4B285C7DA8003F3A69 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		5FEEAC6A285DE86D0056D575 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeCategorie.swift; sourceTree = "<group>"; };
+		5FEEAC6E28605E680056D575 /* OnlyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyMapView.swift; sourceTree = "<group>"; };
+		5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventonMap.swift; sourceTree = "<group>"; };
+		5FEEAC72286076D00056D575 /* listeHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listeHobby.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +80,15 @@
 		5FCBCA70285C64DD00B214DA /* WeHubbyTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
+				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
+				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
+				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				5FEEAC72286076D00056D575 /* listeHobby.swift */,
+				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
 				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
 				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
-				5F818199285CF7CF003E72B2 /* test.swift */,
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
@@ -178,12 +187,15 @@
 				5FCBCA80285C64F800B214DA /* Buttons.swift in Sources */,
 				5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */,
 				5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */,
+				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
+				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
-				5F81819A285CF7CF003E72B2 /* test.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,
+				5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */,
 				5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */,
 				5FD2DB4C285C7DA8003F3A69 /* DataBase.swift in Sources */,
 				5FD2DB4A285C6ED3003F3A69 /* Models.swift in Sources */,
+				5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */,
 				5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */,
 				5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */,
 				5F818194285CB865003E72B2 /* ListEvents.swift in Sources */,
@@ -318,6 +330,7 @@
 				DEVELOPMENT_TEAM = CJCGG2B2V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "On a besoin de votre localisation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -347,6 +360,7 @@
 				DEVELOPMENT_TEAM = CJCGG2B2V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "On a besoin de votre localisation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
