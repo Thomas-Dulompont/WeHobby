@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */; };
 		5F818194285CB865003E72B2 /* ListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818193285CB865003E72B2 /* ListEvents.swift */; };
 		5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818195285CC4AB003E72B2 /* DetailsEvents.swift */; };
 		5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818197285CCFFD003E72B2 /* ProfilAmis.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeCategoriesHobbies.swift; sourceTree = "<group>"; };
 		5F818193285CB865003E72B2 /* ListEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEvents.swift; sourceTree = "<group>"; };
 		5F818195285CC4AB003E72B2 /* DetailsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEvents.swift; sourceTree = "<group>"; };
 		5F818197285CCFFD003E72B2 /* ProfilAmis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilAmis.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
 				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
 				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
 				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
@@ -188,6 +191,7 @@
 				5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */,
 				5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */,
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
+				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,

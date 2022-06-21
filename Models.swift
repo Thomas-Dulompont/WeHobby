@@ -32,6 +32,7 @@ struct Categoriz : Identifiable {
     var id = UUID()
     var nameCategory : Categories
     var picCategory : String
+    var loisir : [Hobbies]
 }
 
 enum Tags: String {
@@ -40,6 +41,7 @@ enum Tags: String {
     case sport = "Sport"
     case crea = "Création"
     case sante = "Santé"
+    case art = "Artistique"
 }
 
 // Loisirs
@@ -54,7 +56,6 @@ struct Hobbies : Identifiable {
     var hobbyEvents : [Events]
     var hobbyComs : [Comments]
     var tutoHobby : [Tutos]
-    var category : Categoriz
 }
 
 
@@ -116,6 +117,7 @@ struct Friends : Identifiable {
     var favoriteCategory : [Categoriz]
     var isOnline: Bool
     var userPicture : String
+    var isFriend: Bool
 }
 
 struct Chat : Identifiable {

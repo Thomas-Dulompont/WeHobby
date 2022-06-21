@@ -50,7 +50,7 @@ struct OnlyMapView: View {
             ) { evenement in
                 
                 MapAnnotation(coordinate: evenement.coordonnnes) {
-                    Image(evenement.eventHobby.category.picCategory)
+                    Image(evenement.eventHobby.hobbyPic)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 50)

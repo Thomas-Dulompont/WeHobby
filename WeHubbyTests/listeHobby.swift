@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct listeHobby: View {
+    
+    var hobby : Categoriz
+    
     var body: some View {
         
-        
-        List(loisirs) { item in
+        VStack {
+        List(hobby.loisir) { hobb in
             HStack{
-            Image(item.hobbyPic)
+            Image(hobb.hobbyPic)
                 .resizable()
                 .scaledToFill()
-                .frame(width:70, height: 70)
+                .frame(width:60, height: 60)
                 .clipped()
-                .cornerRadius(8)
+                .cornerRadius(24)
+                .shadow(radius: 5)
+                
+                Text(hobb.hobbyName)
+                    .fontWeight(.medium)
+                    .font(.system(size: 20))
             
-            Text(item.hobbyName)
-                .fontWeight(.medium)
-                .font(.system(size: 20))
         }
         }
+        }
+        
     }
 }
 
 struct listeHobby_Previews: PreviewProvider {
     static var previews: some View {
-        listeHobby()
+        listeHobby(hobby: categoris[0])
     }
 }
