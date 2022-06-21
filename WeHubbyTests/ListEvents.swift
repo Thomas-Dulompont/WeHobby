@@ -14,7 +14,6 @@ struct ListEvents: View {
     
     var body: some View {
         
-        NavigationView {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 
@@ -72,8 +71,6 @@ struct ListEvents: View {
             }
                                
         }
-        .navigationBarHidden(true)
-            }
         
         
     }

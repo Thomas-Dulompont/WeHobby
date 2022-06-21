@@ -88,6 +88,7 @@ struct Events : Identifiable, Equatable {
     var participate : Bool
     var comms : [Comments]
     var coordonnnes : CLLocationCoordinate2D
+    var lieuComplet : String
 }
 
 

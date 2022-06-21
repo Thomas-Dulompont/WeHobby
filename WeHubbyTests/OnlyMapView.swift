@@ -25,6 +25,17 @@ struct OnlyMapView: View {
     
     @State var selectedEvent = 999
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            locations.last.map {
+                region = MKCoordinateRegion(
+                    center: CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude),
+                    span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
+                )
+            }
+        }
+    
+    @State var searchText = ""
+    
     var body: some View {
         
         ZStack {
@@ -80,12 +91,52 @@ struct OnlyMapView: View {
             })
             .onAppear{
                 manager.delegate = managerDelegate
+                if manager.location != nil {
+                withAnimation {
+                    region.center = manager.location!.coordinate
+                }
+                }
             }
             if selectedEvent != 999 {
                 
                 ShowEventonMap(evenement: evenements, selectedEvent: $selectedEvent)
                 
             }
+
+            VStack(spacing:0) {
+                
+                Button {
+                    
+                    
+                } label : {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system( size: 28))
+                        .foregroundColor(.gray)
+                        .padding(5)
+                        .background(Color("whitty"))
+                }
+                    Divider().frame(width:16)
+            Button {
+                
+                if manager.location != nil {
+                withAnimation {
+                    region.center = manager.location!.coordinate
+                }
+                }
+            } label : {
+                Image(systemName: "location.fill")
+                    .font(.system( size: 28))
+                    .foregroundColor(Color.gray)
+                    .padding(5)
+                    .background(Color("whitty"))
+                
+            }
+            
+                
+            }
+            .cornerRadius(12)
+            .shadow(radius: 5)
+            .offset(x: 150, y: 250)
         }
         
     }
@@ -116,4 +167,5 @@ class locationDelegate: NSObject,ObservableObject,CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     }
 }
+
 

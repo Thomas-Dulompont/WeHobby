@@ -125,7 +125,7 @@ struct DetailsEvents: View {
                     .padding(.trailing,200)
                 }
             }
-            .navigationBarHidden(true)
+            
                 
             
         }
