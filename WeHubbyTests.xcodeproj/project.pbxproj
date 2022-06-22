@@ -29,6 +29,7 @@
 		5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC72286076D00056D575 /* listeHobby.swift */; };
 		C739E0F52862FF9300C65E30 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F42862FF9300C65E30 /* SwipeView.swift */; };
 		C739E0F9286311A000C65E30 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F8286311A000C65E30 /* SwipeCardView.swift */; };
+		C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77524682863CF6D0020368E /* DetailsCommunityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		5FEEAC72286076D00056D575 /* listeHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listeHobby.swift; sourceTree = "<group>"; };
 		C739E0F42862FF9300C65E30 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		C739E0F8286311A000C65E30 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
+		C77524682863CF6D0020368E /* DetailsCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCommunityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
 				C739E0F42862FF9300C65E30 /* SwipeView.swift */,
 				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
+				C77524682863CF6D0020368E /* DetailsCommunityView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
 			);
@@ -203,6 +206,7 @@
 				5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */,
 				5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */,
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
+				C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */,
 				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
 				5FE7ECF12862FE7100FFB23C /* FilterEventOnMap.swift in Sources */,
