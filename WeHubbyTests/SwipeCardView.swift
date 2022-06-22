@@ -25,7 +25,7 @@ struct SwipeCardView: View {
             //Title
             VStack(alignment: .leading) {
                 Spacer().frame(height: 100)
-                Text(loisirs.hobbyName)
+                Text(loisirs.hobbyName.uppercased())
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .bold()
@@ -33,25 +33,25 @@ struct SwipeCardView: View {
                 //Tags
                 HStack {
                     ForEach(loisirs.hobbyTags, id: \.self) { tag in
-                        Text(tag.rawValue)
+                        Text(tag.rawValue.uppercased())
                             .font(.footnote)
                             .foregroundColor(.white)
                             .bold()
                             .padding(.all, 8.0)
-                            .background(Color.blue)
+                            .background(Color("CustomColorBlue"))
                             .cornerRadius(8)
                             .opacity(0.80)
                     }
                 }
                 
                 //Description
-                Text(loisirs.hobbyDescription)
+                Text(loisirs.subtitleSwipe)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
-                    .frame(height: 100)
+                    .frame(height: 50)
                 
-                Spacer().frame(height: 75)
+                Spacer().frame(height: 50)
                 
                 //Buttons
                 HStack {
@@ -61,24 +61,24 @@ struct SwipeCardView: View {
                         swipeCard(width: -130)
                     }
                     .font(.title3.bold())
-                    .frame(width: 145, height: 50)
-                    .background(Color.red)
+                    .frame(width: 150, height: 55)
+                    .background(Color("CustomColorRed"))
                     .cornerRadius(30)
                     .foregroundColor(Color.white)
-                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                    .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                     
-                    Spacer().frame(width: 50)
+                    Spacer()
                     //Button for LinkView
                     Button("DECOUVRIR") {
                         // Action on press
                         print("test")
                     }
                     .font(.title3.bold())
-                    .frame(width: 145, height: 50)
-                    .background(Color.green)
+                    .frame(width: 150, height: 55)
+                    .background(Color("CustomColorGreen"))
                     .cornerRadius(30)
                     .foregroundColor(Color.white)
-                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                    .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                 }
             }.padding()
         }
