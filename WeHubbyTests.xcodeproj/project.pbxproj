@@ -25,6 +25,8 @@
 		5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6E28605E680056D575 /* OnlyMapView.swift */; };
 		5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */; };
 		5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC72286076D00056D575 /* listeHobby.swift */; };
+		C739E0F52862FF9300C65E30 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F42862FF9300C65E30 /* SwipeView.swift */; };
+		C739E0F9286311A000C65E30 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F8286311A000C65E30 /* SwipeCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		5FEEAC6E28605E680056D575 /* OnlyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyMapView.swift; sourceTree = "<group>"; };
 		5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventonMap.swift; sourceTree = "<group>"; };
 		5FEEAC72286076D00056D575 /* listeHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listeHobby.swift; sourceTree = "<group>"; };
+		C739E0F42862FF9300C65E30 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		C739E0F8286311A000C65E30 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
+				C739E0F42862FF9300C65E30 /* SwipeView.swift */,
+				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
 			);
@@ -195,6 +201,7 @@
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,
+				C739E0F52862FF9300C65E30 /* SwipeView.swift in Sources */,
 				5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */,
 				5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */,
 				5FD2DB4C285C7DA8003F3A69 /* DataBase.swift in Sources */,
@@ -203,6 +210,7 @@
 				5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */,
 				5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */,
 				5F818194285CB865003E72B2 /* ListEvents.swift in Sources */,
+				C739E0F9286311A000C65E30 /* SwipeCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
