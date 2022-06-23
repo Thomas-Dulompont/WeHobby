@@ -109,7 +109,7 @@ struct Comments : Identifiable {
     var id = UUID()
     var userPics: String
     var userName: String
-    var commDetail : String
+    var commDetail: String
 }
 
 
