@@ -20,7 +20,7 @@ struct ContentView: View {
                     Label("Évènements", systemImage: "theatermasks.fill")
                 }
 
-            MessageView(friend: userProfiles[0])
+            AmisView(searchText: "")
                 .tabItem {
                     Label("Amis", systemImage: "person.2.fill")
                 }
