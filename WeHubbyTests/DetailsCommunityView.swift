@@ -9,15 +9,18 @@ import SwiftUI
 
 struct DetailsCommunityView: View {
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack {
-                ForEach(evenements) { event in
-                    ListCommunityEvents(events: event)
-                }
-            }.padding()
+        VStack(alignment: .leading) {
+            Text("Title Exemple")
+            ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(evenements) { event in
+                            ListCommunityEvents(events: event)
+                        }
+                    }.padding()
+            }
+        }
         }
     }
-}
 
 struct DetailsCommunityView_Previews: PreviewProvider {
     static var previews: some View {
