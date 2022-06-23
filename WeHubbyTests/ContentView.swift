@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Text("Loisirs")
+            SwipeView()
                 .tabItem {
                     Label("Loisirs", systemImage: "dice.fill")
                 }
@@ -19,11 +19,12 @@ struct ContentView: View {
                 .tabItem {
                     Label("Évènements", systemImage: "theatermasks.fill")
                 }
+
             MessageView(friend: userProfiles[0])
                 .tabItem {
                     Label("Amis", systemImage: "person.2.fill")
                 }
-            ProfilAmis()
+            MonProfil()
                 .tabItem {
                     Label("Mon profil", systemImage: "person.circle.fill")
                 }

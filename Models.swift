@@ -28,10 +28,14 @@ enum Categories: String {
     case info = "Informatique"
 }
 
-struct Categoriz : Identifiable {
+struct Categoriz : Identifiable, Equatable {
+    static func == (lhs: Categoriz, rhs: Categoriz) -> Bool {
+        return lhs.id == rhs.id
+    }
     var id = UUID()
     var nameCategory : Categories
     var picCategory : String
+//    var loisir : [Hobbies]
 }
 
 enum Tags: String {
@@ -40,6 +44,7 @@ enum Tags: String {
     case sport = "Sport"
     case crea = "Création"
     case sante = "Santé"
+    case art = "Artistique"
 }
 
 // Loisirs
@@ -54,7 +59,7 @@ struct Hobbies : Identifiable {
     var hobbyEvents : [Events]
     var hobbyComs : [Comments]
     var tutoHobby : [Tutos]
-    var category : Categoriz
+    var category: Categoriz
 }
 
 
@@ -70,6 +75,11 @@ struct Tutos : Identifiable {
 
 
 // Events
+enum TypeEvents: String {
+    case isOut = "En extérieur"
+    case isIn = "En intérieur"
+    case distanc = "En visio"
+}
 
 struct Events : Identifiable, Equatable {
     static func == (lhs: Events, rhs: Events) -> Bool {
@@ -82,13 +92,14 @@ struct Events : Identifiable, Equatable {
     var eventPlace : String
     var eventDate : String
     var eventDesc : String
-    var isOut : Bool
+    var type : TypeEvents
     var eventPicture : String
     var participants : [Friends]
     var participate : Bool
     var comms : [Comments]
     var coordonnnes : CLLocationCoordinate2D
     var lieuComplet : String
+    var catego : Categoriz
 }
 
 
@@ -98,7 +109,7 @@ struct Comments : Identifiable {
     var id = UUID()
     var userPics: String
     var userName: String
-    var commDetail : String
+    var commDetail: String
 }
 
 
@@ -116,13 +127,23 @@ struct Friends : Identifiable {
     var favoriteCategory : [Categoriz]
     var isOnline: Bool
     var userPicture : String
+    var isFriend: Bool
+    var ville: String
 }
 
 struct Chat : Identifiable {
     var id = UUID()
     var userChat : Friends
     var message : String
+    
 }
 
 
 
+func filterHobbies (categorie: Categoriz) -> [Hobbies] {
+    
+    let filteredHobbies = loisirs.filter { hobby in
+        hobby.category.id == categorie.id
+    }
+     return filteredHobbies
+}

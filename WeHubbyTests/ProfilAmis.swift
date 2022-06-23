@@ -33,25 +33,27 @@ struct ProfilAmis: View {
         if let user = userProfiles.first(where: { $0.isCurrentUser
         }){
             
-            VStack (){
-    
+            ZStack{
+                
+                VStack {
                 Image(user.userCover)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: width, height: 250)
+                    .frame(width: width, height: 300)
                     .clipped()
                     .ignoresSafeArea()
                     .zIndex(0)
+                    
+                    Spacer()
+                }
                 
                 
-                
-                VStack {
-                Rectangle()
-                    .foregroundColor(.white)
-                    .cornerRadius(32)
-                    .offset(y: -80)
-                    .frame(height: 100)
-                VStack{
+                ZStack {
+                    
+                    ScrollView(.vertical, showsIndicators: false){
+                        
+                        VStack{
+                            
                     HStack(spacing: 30){
                         Button {
                             
@@ -62,6 +64,8 @@ struct ProfilAmis: View {
                                 
                             imageName = "person.fill.badge.plus"
                             }
+                            
+//                            user.isFriend.toggle()
                             
                         } label : {
                             Image(systemName: imageName)
@@ -106,6 +110,21 @@ struct ProfilAmis: View {
                             .font(.title)
                             .fontWeight(.medium)
                         
+                        HStack {
+                            
+                            Image(systemName : "mappin.and.ellipse")
+                                .foregroundColor(.accentColor)
+                                .font(.callout)
+
+                            Text(user.ville)
+                                .foregroundColor(.accentColor)
+                                .font(.callout)
+                            
+                            
+                            
+                            Spacer()
+                        }
+                        .padding(.leading, 30)
                         
                         HStack(spacing: 10){
                             
@@ -134,13 +153,7 @@ struct ProfilAmis: View {
                                     .background(.cyan)
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
-                            Text("+")
-                                    .fontWeight(.semibold)
-                                    .padding(.vertical, 5.0)
-                                    .padding(.horizontal, 10.0)
-                                    .background(.cyan)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(10)
+                            
                             }
                         
                         
@@ -167,7 +180,7 @@ struct ProfilAmis: View {
                                 
                                 Image(favoris.picCategory)
                                     .resizable()
-                                    .frame(width: 50, height: 50)
+                                    .frame(width: 40, height: 40)
                             }
                             Spacer()
                         }
@@ -183,7 +196,7 @@ struct ProfilAmis: View {
                                     
                                     TabButtonBis(title: "Évènements futurs", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .futurs)
                                     
-                                    TabButtonBis(title: "Évènements passés", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .past)
+                                    TabButtonBis(title: "Évènements organisés", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .past)
                                     
                                     
                                 }
@@ -192,15 +205,59 @@ struct ProfilAmis: View {
                             
                             
                             Divider()
+                            VStack {
+                                switch selectedTab {
+                                case .photos :
+                                    
+                                    PicturesFriends(user: user)
+                                    
+                                case .futurs:
+                                    Text("ok")
+                                case .past :
+                                    Text("ko")
+                                }
+                            }
                         }
                     }
                     .offset(y: -35)
                 }
-                .offset(y: -200)
+                .background(
+                    RoundedRectangle(cornerRadius: 32, style: .continuous)
+                        .foregroundColor(.white)
+                    //                                .frame(height: 100)
+//                                .padding(.top, 15)
+                )
+//                        .offset(y:170)
+                .padding(.top, 150)
             }
-            }
+//                    .offset(y: 170)
+            
         }
+//                .offset(y:170)
+//        VStack {
+//            Spacer()
+//        HStack {
+//
+//            Spacer()
+//    Button {
+//
+//    } label : {
+//        Image(systemName: "camera.fill")
+//            .font(.system(size:24))
+//            .foregroundColor(.white)
+//            .padding(12)
+//            .background(Color.accentColor)
+//            .clipShape(Circle())
+//            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+//
+//    }
+//    .padding(.trailing, 15)
+//    .padding(.bottom, 15)
+//        }
+//        }
     }
+}
+}
 }
 struct ProfilAmis_Previews: PreviewProvider {
     static var previews: some View {
