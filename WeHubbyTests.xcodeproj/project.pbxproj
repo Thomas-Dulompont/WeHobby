@@ -24,6 +24,12 @@
 		5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6E28605E680056D575 /* OnlyMapView.swift */; };
 		5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */; };
 		5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC72286076D00056D575 /* listeHobby.swift */; };
+		7B91CFCC2864693500726265 /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B91CFCB2864693500726265 /* MessageBoxView.swift */; };
+		7BD1F2912861F87400EC2401 /* DetailsBulleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2902861F87400EC2401 /* DetailsBulleMessage.swift */; };
+		7BD1F2932861FB2300EC2401 /* AmisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2922861FB2300EC2401 /* AmisView.swift */; };
+		7BD1F2A42863221200EC2401 /* DetailListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A32863221200EC2401 /* DetailListMessage.swift */; };
+		7BD1F2A82863573400EC2401 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A72863573400EC2401 /* SearchBarView.swift */; };
+		7BD1F2AA2864491100EC2401 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A92864491100EC2401 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,12 @@
 		5FEEAC6E28605E680056D575 /* OnlyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyMapView.swift; sourceTree = "<group>"; };
 		5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventonMap.swift; sourceTree = "<group>"; };
 		5FEEAC72286076D00056D575 /* listeHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listeHobby.swift; sourceTree = "<group>"; };
+		7B91CFCB2864693500726265 /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
+		7BD1F2902861F87400EC2401 /* DetailsBulleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBulleMessage.swift; sourceTree = "<group>"; };
+		7BD1F2922861FB2300EC2401 /* AmisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmisView.swift; sourceTree = "<group>"; };
+		7BD1F2A32863221200EC2401 /* DetailListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListMessage.swift; sourceTree = "<group>"; };
+		7BD1F2A72863573400EC2401 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		7BD1F2A92864491100EC2401 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +94,11 @@
 			children = (
 				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
 				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
+				7BD1F2922861FB2300EC2401 /* AmisView.swift */,
+				7BD1F2A72863573400EC2401 /* SearchBarView.swift */,
 				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
 				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				7BD1F29C2863026B00EC2401 /* Message */,
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
 				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
@@ -112,6 +127,17 @@
 				5FD2DB47285C6D1C003F3A69 /* Picker.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		7BD1F29C2863026B00EC2401 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				7BD1F2902861F87400EC2401 /* DetailsBulleMessage.swift */,
+				7B91CFCB2864693500726265 /* MessageBoxView.swift */,
+				7BD1F2A32863221200EC2401 /* DetailListMessage.swift */,
+				7BD1F2A92864491100EC2401 /* MessageView.swift */,
+			);
+			path = Message;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,18 +212,24 @@
 			files = (
 				5FCBCA80285C64F800B214DA /* Buttons.swift in Sources */,
 				5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */,
+				7BD1F2932861FB2300EC2401 /* AmisView.swift in Sources */,
 				5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */,
+				7BD1F2AA2864491100EC2401 /* MessageView.swift in Sources */,
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
+				7BD1F2912861F87400EC2401 /* DetailsBulleMessage.swift in Sources */,
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,
+				7BD1F2A82863573400EC2401 /* SearchBarView.swift in Sources */,
 				5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */,
 				5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */,
 				5FD2DB4C285C7DA8003F3A69 /* DataBase.swift in Sources */,
 				5FD2DB4A285C6ED3003F3A69 /* Models.swift in Sources */,
 				5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */,
 				5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */,
+				7B91CFCC2864693500726265 /* MessageBoxView.swift in Sources */,
 				5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */,
+				7BD1F2A42863221200EC2401 /* DetailListMessage.swift in Sources */,
 				5F818194285CB865003E72B2 /* ListEvents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
