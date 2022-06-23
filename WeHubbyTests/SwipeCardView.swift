@@ -134,8 +134,7 @@ struct SwipeCardView: View {
 
 struct SwipeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipeCardView(loisirs:
-            Hobbies(hobbyName: "Couture", hobbyDescription: "Une couture est l'assemblage de deux ou plusieurs pièces à l'aide de fil à coudre, soit manuellement avec une aiguille, soit en utilisant une machine à coudre ou une surjeteuse. ", subtitleSwipe: "Assemblez des pièces de tissus à l'aide d'une aiguille ou d'une machine.", hobbyPic: "epoxy", hobbyTags: [.crea, .relaxa], hobbyEvents: [], hobbyComs: [], tutoHobby: [])
-        )
+        SwipeCardView(loisirs:loisirs[0])
+        
     }
 }
