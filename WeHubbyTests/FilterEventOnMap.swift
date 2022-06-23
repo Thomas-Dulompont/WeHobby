@@ -38,9 +38,10 @@ struct FilterEventOnMap: View {
             Rectangle()
                 .foregroundColor(.black.opacity(0.2))
 //                .background(.ultraThinMaterial)
+                .blur(radius:10)
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading, spacing: 25) {
+            VStack(alignment: .leading, spacing: 10) {
                 
                 HStack{
                     Text("Par date")
@@ -92,6 +93,7 @@ struct FilterEventOnMap: View {
                     }
                 }.frame(width: 252)
                 .padding(.leading, 30)
+                .padding(.bottom)
                 
                 
                 HStack{
@@ -122,7 +124,7 @@ struct FilterEventOnMap: View {
                         } label: {
                             Image(picture.picCategory)
                                 .resizable()
-                                .frame(width: 48, height: 48)
+                                .frame(width: 40, height: 40)
                                 .padding(4)
                                 .background(isCategorySelected(categorie: picture) ? .white : .accentColor)
                                 .cornerRadius(16)
@@ -142,9 +144,9 @@ struct FilterEventOnMap: View {
                         
                     } label: {
                         
-                        Text("Valider")
-                            .fontWeight(.bold)
-                            .padding()
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 28))
+                            .padding(10)
                             .background(.white)
                             .cornerRadius(24)
                 }

@@ -14,6 +14,7 @@ struct listeHobby: View {
     var body: some View {
         
         VStack {
+            
             List(hobby) { hobb in
             HStack{
             Image(hobb.hobbyPic)
