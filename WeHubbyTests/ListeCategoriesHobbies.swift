@@ -14,7 +14,7 @@ struct ListeCategoriesHobbies: View {
             
             List(categoris) { hobby in
                 NavigationLink(destination: {
-                    listeHobby(hobby: hobby)
+                    listeHobby(hobby: filterHobbies(categorie: hobby))
                 }, label: {
                 HStack{
                     

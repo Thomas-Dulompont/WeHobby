@@ -32,18 +32,7 @@ struct PicturesFriends: View {
                     .frame(width: 130, height:125)
                     .clipped()
             }
-            Button {
-                
-            } label : {
-                Image(systemName: "camera.fill")
-                    .font(.system(size:24))
-                    .foregroundColor(.white)
-                    .padding(12)
-                    .background(Color.accentColor)
-                    .clipShape(Circle())
-                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
-                    
-            }.offset(y: -120)
+
         }
             }
             }

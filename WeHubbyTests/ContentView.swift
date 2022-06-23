@@ -19,11 +19,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Évènements", systemImage: "theatermasks.fill")
                 }
-            Text("Amis")
+            ProfilAmis()
                 .tabItem {
                     Label("Amis", systemImage: "person.2.fill")
                 }
-            ProfilAmis()
+            MonProfil()
                 .tabItem {
                     Label("Mon profil", systemImage: "person.circle.fill")
                 }
