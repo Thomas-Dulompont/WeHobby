@@ -20,6 +20,8 @@
 		5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2DB47285C6D1C003F3A69 /* Picker.swift */; };
 		5FD2DB4A285C6ED3003F3A69 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2DB49285C6ED3003F3A69 /* Models.swift */; };
 		5FD2DB4C285C7DA8003F3A69 /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD2DB4B285C7DA8003F3A69 /* DataBase.swift */; };
+		5FE7ECEF2861FA7A00FFB23C /* MonProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */; };
+		5FE7ECF12862FE7100FFB23C /* FilterEventOnMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */; };
 		5FEEAC6B285DE86D0056D575 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6A285DE86D0056D575 /* MapView.swift */; };
 		5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */; };
 		5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6E28605E680056D575 /* OnlyMapView.swift */; };
@@ -42,6 +44,8 @@
 		5FD2DB47285C6D1C003F3A69 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
 		5FD2DB49285C6ED3003F3A69 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		5FD2DB4B285C7DA8003F3A69 /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
+		5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonProfil.swift; sourceTree = "<group>"; };
+		5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterEventOnMap.swift; sourceTree = "<group>"; };
 		5FEEAC6A285DE86D0056D575 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeCategorie.swift; sourceTree = "<group>"; };
 		5FEEAC6E28605E680056D575 /* OnlyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyMapView.swift; sourceTree = "<group>"; };
@@ -85,14 +89,16 @@
 				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
 				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
 				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
-				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
 				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
+				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
 				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
 				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
 				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
+				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
@@ -193,7 +199,9 @@
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
 				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
+				5FE7ECF12862FE7100FFB23C /* FilterEventOnMap.swift in Sources */,
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
+				5FE7ECEF2861FA7A00FFB23C /* MonProfil.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,
 				5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */,
 				5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */,

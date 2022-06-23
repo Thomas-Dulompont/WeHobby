@@ -25,16 +25,23 @@ struct OnlyMapView: View {
     
     @State var selectedEvent = 999
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            locations.last.map {
-                region = MKCoordinateRegion(
-                    center: CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude),
-                    span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
-                )
-            }
-        }
+    @State var filteredEvents : [Events] = evenements
     
-    @State var searchText = ""
+    @State var isFilteredSelected : Bool = false
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locations.last.map {
+            region = MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude),
+                span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+            )
+        }
+    }
+    
+    @State var selectedCategories: [Categoriz] = []
+    
+    @State var selectedType : [TypeEvents] = []
+
     
     var body: some View {
         
@@ -46,11 +53,11 @@ struct OnlyMapView: View {
                 interactionModes: MapInteractionModes.all,
                 showsUserLocation: true,
                 userTrackingMode: $userTrackingMode,
-                annotationItems: evenements
+                annotationItems: filteredEvents
             ) { evenement in
                 
                 MapAnnotation(coordinate: evenement.coordonnnes) {
-                    Image(evenement.eventHobby.hobbyPic)
+                    Image(evenement.catego.picCategory)
                         .resizable()
                         .scaledToFill()
                         .frame(width: 50)
@@ -60,7 +67,7 @@ struct OnlyMapView: View {
                         .clipShape(Circle())
                         .onTapGesture {
                             
-                            if let event = evenements.firstIndex(where: { $0 == evenement
+                            if let event = filteredEvents.firstIndex(where: { $0 == evenement
                             })
                             {
                                 
@@ -85,59 +92,129 @@ struct OnlyMapView: View {
                 
                 if newValue != 999 {
                     withAnimation {
-                        region.center = evenements[newValue].coordonnnes
+                        region.center = filteredEvents[newValue].coordonnnes
+                        region.span =  MKCoordinateSpan(
+                            latitudeDelta: 0.1,
+                            longitudeDelta: 0.1
+                        )
                     }
                 }
             })
             .onAppear{
                 manager.delegate = managerDelegate
                 if manager.location != nil {
-                withAnimation {
-                    region.center = manager.location!.coordinate
-                }
+                    withAnimation {
+                        region.center = manager.location!.coordinate
+                    }
                 }
             }
             if selectedEvent != 999 {
                 
-                ShowEventonMap(evenement: evenements, selectedEvent: $selectedEvent)
+                ShowEventonMap(evenement: filteredEvents, selectedEvent: $selectedEvent)
                 
             }
-
+            
+            if isFilteredSelected {
+                
+                FilterEventOnMap(selectedCategories: $selectedCategories, selectedType: $selectedType, isFilteredSelected: $isFilteredSelected)
+                
+                .onChange(of: selectedCategories) { newValue in
+                    
+                        filteredEvent()
+                    
+                }
+                
+                .onChange(of: selectedType) { newValue in
+                    
+                            filteredEvent()
+                    
+                }
+            }
+            
             VStack(spacing:0) {
                 
                 Button {
                     
+                    withAnimation  {
+                    isFilteredSelected.toggle()
+                    
+                    }
                     
                 } label : {
-                    Image(systemName: "magnifyingglass")
+                    Image(systemName: "slider.horizontal.3")
                         .font(.system( size: 28))
                         .foregroundColor(.gray)
                         .padding(5)
                         .background(Color("whitty"))
                 }
-                    Divider().frame(width:16)
-            Button {
-                
-                if manager.location != nil {
-                withAnimation {
-                    region.center = manager.location!.coordinate
+                Divider().frame(width:16)
+                Button {
+                    
+                    if manager.location != nil {
+                        withAnimation {
+                            region.center = manager.location!.coordinate
+                            region.span =  MKCoordinateSpan(
+                                latitudeDelta: 0.1,
+                                longitudeDelta: 0.1
+                            )
+                        }
+                    }
+                } label : {
+                    Image(systemName: "location.fill")
+                        .font(.system( size: 28))
+                        .foregroundColor(Color.gray)
+                        .padding(6)
+                        .background(Color("whitty"))
+                    
                 }
-                }
-            } label : {
-                Image(systemName: "location.fill")
-                    .font(.system( size: 28))
-                    .foregroundColor(Color.gray)
-                    .padding(5)
-                    .background(Color("whitty"))
                 
-            }
-            
                 
             }
             .cornerRadius(12)
             .shadow(radius: 5)
             .offset(x: 150, y: 250)
         }
+        
+    }
+    
+    func filteredEvent() {
+        
+        selectedEvent = 999
+        
+        if selectedCategories.isEmpty && selectedType.isEmpty {
+            
+            filteredEvents = evenements
+            
+        } else {
+            
+            filteredEvents = evenements
+                
+                .filter({ events in
+                
+                if !selectedCategories.isEmpty {
+               return selectedCategories.contains( where: { categori in
+                    events.catego.id == categori.id
+                })
+                } else {
+                    return true
+                }
+                
+
+                
+            })
+            .filter({ events in
+                
+                if !selectedType.isEmpty {
+               return  selectedType.contains(where: { type in
+                   events.type == type
+               })
+                } else {
+                    return true
+                
+                }
+            })
+        }
+        
         
     }
 }

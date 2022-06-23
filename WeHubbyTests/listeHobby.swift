@@ -9,12 +9,12 @@ import SwiftUI
 
 struct listeHobby: View {
     
-    var hobby : Categoriz
+    var hobby : [Hobbies]
     
     var body: some View {
         
         VStack {
-        List(hobby.loisir) { hobb in
+            List(hobby) { hobb in
             HStack{
             Image(hobb.hobbyPic)
                 .resizable()
@@ -37,6 +37,8 @@ struct listeHobby: View {
 
 struct listeHobby_Previews: PreviewProvider {
     static var previews: some View {
-        listeHobby(hobby: categoris[0])
+        listeHobby(hobby: loisirs)
     }
 }
+
+
