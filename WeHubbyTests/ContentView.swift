@@ -19,7 +19,8 @@ struct ContentView: View {
                 .tabItem {
                     Label("Évènements", systemImage: "theatermasks.fill")
                 }
-            ProfilAmis()
+
+            MessageView(friend: userProfiles[0])
                 .tabItem {
                     Label("Amis", systemImage: "person.2.fill")
                 }
