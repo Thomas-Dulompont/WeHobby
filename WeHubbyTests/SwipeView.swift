@@ -15,6 +15,7 @@ struct SwipeView: View {
                 ForEach(loisirs) { loisir in
                     SwipeCardView(loisirs: loisir)
                 }
+                Text("Test")
             }
         }
     }
