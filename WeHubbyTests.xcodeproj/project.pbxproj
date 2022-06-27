@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */; };
 		436C59842866131B002045CA /* HobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C59832866131B002045CA /* HobbyView.swift */; };
 		436C598628661331002045CA /* HobbyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C598528661331002045CA /* HobbyDetailView.swift */; };
 		436C59882866134C002045CA /* TutosDetailRaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C59872866134C002045CA /* TutosDetailRaw.swift */; };
@@ -15,6 +14,7 @@
 		436C598C2866139B002045CA /* ListCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C598B2866139B002045CA /* ListCommentsView.swift */; };
 		436C598E286613B5002045CA /* ListCommentsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C598D286613B5002045CA /* ListCommentsScrollView.swift */; };
 		436C5990286613D1002045CA /* CommentRawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C598F286613D1002045CA /* CommentRawView.swift */; };
+		5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */; };
 		5F818194285CB865003E72B2 /* ListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818193285CB865003E72B2 /* ListEvents.swift */; };
 		5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818195285CC4AB003E72B2 /* DetailsEvents.swift */; };
 		5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818197285CCFFD003E72B2 /* ProfilAmis.swift */; };
@@ -34,22 +34,18 @@
 		5FEEAC6F28605E680056D575 /* OnlyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC6E28605E680056D575 /* OnlyMapView.swift */; };
 		5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */; };
 		5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEEAC72286076D00056D575 /* listeHobby.swift */; };
-
 		7B91CFCC2864693500726265 /* MessageBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B91CFCB2864693500726265 /* MessageBoxView.swift */; };
 		7BD1F2912861F87400EC2401 /* DetailsBulleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2902861F87400EC2401 /* DetailsBulleMessage.swift */; };
 		7BD1F2932861FB2300EC2401 /* AmisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2922861FB2300EC2401 /* AmisView.swift */; };
 		7BD1F2A42863221200EC2401 /* DetailListMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A32863221200EC2401 /* DetailListMessage.swift */; };
 		7BD1F2A82863573400EC2401 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A72863573400EC2401 /* SearchBarView.swift */; };
 		7BD1F2AA2864491100EC2401 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD1F2A92864491100EC2401 /* MessageView.swift */; };
-
 		C739E0F52862FF9300C65E30 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F42862FF9300C65E30 /* SwipeView.swift */; };
 		C739E0F9286311A000C65E30 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C739E0F8286311A000C65E30 /* SwipeCardView.swift */; };
 		C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77524682863CF6D0020368E /* DetailsCommunityView.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeCategoriesHobbies.swift; sourceTree = "<group>"; };
 		436C59832866131B002045CA /* HobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyView.swift; sourceTree = "<group>"; };
 		436C598528661331002045CA /* HobbyDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyDetailView.swift; sourceTree = "<group>"; };
 		436C59872866134C002045CA /* TutosDetailRaw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutosDetailRaw.swift; sourceTree = "<group>"; };
@@ -57,6 +53,7 @@
 		436C598B2866139B002045CA /* ListCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommentsView.swift; sourceTree = "<group>"; };
 		436C598D286613B5002045CA /* ListCommentsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCommentsScrollView.swift; sourceTree = "<group>"; };
 		436C598F286613D1002045CA /* CommentRawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRawView.swift; sourceTree = "<group>"; };
+		5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeCategoriesHobbies.swift; sourceTree = "<group>"; };
 		5F818193285CB865003E72B2 /* ListEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEvents.swift; sourceTree = "<group>"; };
 		5F818195285CC4AB003E72B2 /* DetailsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEvents.swift; sourceTree = "<group>"; };
 		5F818197285CCFFD003E72B2 /* ProfilAmis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilAmis.swift; sourceTree = "<group>"; };
@@ -77,18 +74,15 @@
 		5FEEAC6E28605E680056D575 /* OnlyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyMapView.swift; sourceTree = "<group>"; };
 		5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowEventonMap.swift; sourceTree = "<group>"; };
 		5FEEAC72286076D00056D575 /* listeHobby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listeHobby.swift; sourceTree = "<group>"; };
-
 		7B91CFCB2864693500726265 /* MessageBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoxView.swift; sourceTree = "<group>"; };
 		7BD1F2902861F87400EC2401 /* DetailsBulleMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsBulleMessage.swift; sourceTree = "<group>"; };
 		7BD1F2922861FB2300EC2401 /* AmisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmisView.swift; sourceTree = "<group>"; };
 		7BD1F2A32863221200EC2401 /* DetailListMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListMessage.swift; sourceTree = "<group>"; };
 		7BD1F2A72863573400EC2401 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		7BD1F2A92864491100EC2401 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-
 		C739E0F42862FF9300C65E30 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 		C739E0F8286311A000C65E30 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
 		C77524682863CF6D0020368E /* DetailsCommunityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCommunityView.swift; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,14 +136,11 @@
 				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
 				7BD1F2922861FB2300EC2401 /* AmisView.swift */,
 				7BD1F2A72863573400EC2401 /* SearchBarView.swift */,
+				436C59822866126A002045CA /* InformationsHobby */,
 				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
-
-				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
 				7BD1F29C2863026B00EC2401 /* Message */,
-
 				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
 				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
-
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
 				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
 				5F818193285CB865003E72B2 /* ListEvents.swift */,
@@ -163,7 +154,6 @@
 				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
 				C77524682863CF6D0020368E /* DetailsCommunityView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
-				436C59822866126A002045CA /* InformationsHobby */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
 			);
 			path = WeHubbyTests;
@@ -279,19 +269,13 @@
 				C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */,
 				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
-
 				7BD1F2912861F87400EC2401 /* DetailsBulleMessage.swift in Sources */,
-
 				5FE7ECF12862FE7100FFB23C /* FilterEventOnMap.swift in Sources */,
-
 				5FD2DB48285C6D1C003F3A69 /* Picker.swift in Sources */,
 				5FE7ECEF2861FA7A00FFB23C /* MonProfil.swift in Sources */,
 				5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */,
-
 				7BD1F2A82863573400EC2401 /* SearchBarView.swift in Sources */,
-
 				C739E0F52862FF9300C65E30 /* SwipeView.swift in Sources */,
-
 				5FEEAC6D285E095E0056D575 /* ListeCategorie.swift in Sources */,
 				5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */,
 				436C59842866131B002045CA /* HobbyView.swift in Sources */,
