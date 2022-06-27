@@ -9,24 +9,53 @@ import SwiftUI
 
 struct DetailsEvents: View {
     
-    var width: CGFloat = UIScreen.main.bounds.width - 50
+    var width: CGFloat = UIScreen.main.bounds.width
     
     var event : Events
     
-    @State var buttonName: String = "Participer"
+    @State var buttonParticipe: String = "xmark"
 
+    @State var buttonImage: String = "heart"
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             
             VStack {
+                
+                ZStack {
                 Image(event.eventPicture)
                     .resizable()
-                    .scaledToFit()
-                    .frame(width:width)
-                    .cornerRadius(24)
+                    .scaledToFill()
+                    .frame(width:width, height: 250)
+                    .clipped()
+//                    .cornerRadius(24)
                     .shadow(radius: 4)
+                    .ignoresSafeArea()
                     .padding(.bottom, 15)
+                    
+                    HStack {
+                    
+                        Spacer()
+                    Button {
+                        
+                    } label: {
+                        
+                            Image(systemName: "square.and.arrow.up")
+                                .foregroundColor(.white)
+                                .font(.system(size: 24))
+                            
+                    }.padding(10)
+                            .background(
+                            Capsule()
+                                .fill(Color.accentColor))
+                            .opacity(0.9)
+                            .cornerRadius(16)
+                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                    
+                    }.padding(.trailing, 24)
+                        .padding(.bottom, 190)
+                }
+                
                 
                 HStack(spacing:14) {
                     
@@ -34,51 +63,136 @@ struct DetailsEvents: View {
                         
                         Text(event.eventName)
                             .fontWeight(.semibold)
-                            .font(.system(size: 24))
+                            .font(.system(size: 28))
                         HStack(spacing: 16){
                             Text("📍 \(event.eventPlace)")
                                 .fontWeight(.thin)
+                                .font(.system(size: 16))
                             
                             Text("📅 \(event.eventDate)")
                                 .fontWeight(.thin)
+                                .font(.system(size: 16))
+
+                            
+                            
                         }
                     }
+
+                }
+                
+                HStack(spacing: 20) {
+                
+                Button {
+                    
+                    withAnimation{
+                    if buttonParticipe == "xmark" {
+                        
+                    buttonParticipe = "checkmark"
+                    } else {
+                        
+                    buttonParticipe = "xmark"
+                    }
+                    }
+                    
+                } label: {
+                    
+                    HStack {
+                        
+                        Image(systemName: buttonParticipe)
+                            .foregroundColor(.white)
+                            .font(.system(size: 20))
+                        
+                    Text("Participer")
+                        .font(.system(size: 18))
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        
+                        
+                    }.padding(.horizontal, 12)
+                        .padding(.vertical,10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(Color.accentColor)
+                        )
+//                        .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                }
+                    
                     
                     
                     Button {
-                        if buttonName == "Participer" {
+                        
+                        withAnimation{
+                        if buttonImage == "heart" {
                             
-                        buttonName = "Participe "
+                        buttonImage = "heart.fill"
                         } else {
                             
-                        buttonName = "Participer"
+                        buttonImage = "heart"
+                        }
                         }
                         
-                        
                     } label: {
-                        Text(buttonName)
-                            .font(.system(size: 20))
+                        
+                        HStack {
+                            
+                            Image(systemName: buttonImage)
+                                .foregroundColor(.accentColor)
+                                .font(.system(size: 20))
+                            
+                        Text("Intéressé(e)")
+                            .font(.system(size: 18))
                             .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 24)
-                            .padding(.vertical,16)
-                            .background(Color.accentColor)
-                            .cornerRadius(28)
-                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                            .foregroundColor(.accentColor)
+                            
+                    }.padding(.horizontal, 12)
+                            .padding(.vertical,10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(Color.accentColor, lineWidth: 1.5)
+                            )
                     }
+                    
                 }
-                .padding(.bottom)
                 Divider().frame(width: width)
-                    .padding(.bottom,8)
+                    .padding()
                 
                 VStack(spacing: 16){
                     
                     Text(event.eventDesc)
                         .font(.system(size:16))
-                        .padding()
+                        .padding(.horizontal, 20)
                     
                     
+                    HStack {
+                        
+                        Text("Informations pratiques")
+                            .foregroundColor(.accentColor)
+                            .fontWeight(.bold)
+                            .underline()
+                            .frame(alignment: .leading)
+                    }
+                    .padding(.trailing,155)
                     
+                    
+                    HStack {
+                        
+                        if event.type == .isOut || event.type == .isIn {
+                            
+                        Image(systemName: "mappin.circle.fill")
+                            .font(.system(size: 32))
+                            
+                        } else {
+                            
+                            Image(systemName: "network")
+                                .font(.system(size: 32))
+                        }
+                    
+                    Text(event.lieuComplet)
+                        .fontWeight(.light)
+                        .italic()
+                        
+                    }
+                    .frame(width: 320)
                     
                     HStack {
                         
@@ -97,7 +211,7 @@ struct DetailsEvents: View {
                             Image(participant.userPicture)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 80)
+                                .frame(width: 70)
                                 .clipped()
                                 .clipShape(Circle())
                                 .shadow(radius: 5)

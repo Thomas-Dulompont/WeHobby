@@ -24,6 +24,10 @@ struct ShowEventonMap: View {
             //            HStack(alignment: .center, spacing: 24) {
             ForEach(0..<evenement.count) { index in
                 let event = evenement[index]
+                
+                ZStack {
+                    
+                
                 VStack(alignment: .center, spacing:0) {
                     Image(event.eventPicture)
                         .resizable()
@@ -85,7 +89,7 @@ struct ShowEventonMap: View {
                                 .foregroundColor(.white)
                                 .opacity(1)
                             
-                        }.offset(x: 150, y: -110)
+                        }.offset(x: 140, y: -110)
                         
                     }
                 }   .cornerRadius(16)
@@ -94,6 +98,13 @@ struct ShowEventonMap: View {
                     .opacity(0.85)
                     .cornerRadius(16)
                     .tag(index)
+                    
+                    Image(systemName: "greaterthan.circle.fill")
+                        .font(.system(size: 40))
+                        .foregroundColor(.accentColor)
+                        .opacity(0.9)
+                        .offset(x: 160)
+                }
                 
             }
             
@@ -109,7 +120,7 @@ struct ShowEventonMap: View {
         } .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 170)
         
-            .offset(y: -240)
+            .offset(y: -230)
         
     }
 }

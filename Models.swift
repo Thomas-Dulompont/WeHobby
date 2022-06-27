@@ -45,6 +45,11 @@ enum Tags: String {
     case crea = "Création"
     case sante = "Santé"
     case art = "Artistique"
+    case epicur = "Epicurieux"
+    case nuit = "Nocturne"
+    case aventu = "Aventure"
+    case cook = "Cuisine"
+    case music = "Musique"
 }
 
 // Loisirs
@@ -173,4 +178,14 @@ func filterHobbies (categorie: Categoriz) -> [Hobbies] {
         hobby.category.id == categorie.id
     }
      return filteredHobbies
+}
+
+
+func filterEventsCategories (categorie: Categoriz) -> [Events] {
+
+let filteredEventsCategories = evenements.filter { event in
+    event.catego.id == categorie.id
+}
+
+return filteredEventsCategories
 }

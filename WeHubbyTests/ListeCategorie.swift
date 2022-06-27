@@ -11,11 +11,12 @@ struct ListeCategorie: View {
     var body: some View {
         
 //        NavigationView {
+        
         VStack {
             
             List(categoris) { hobbi in
                 NavigationLink(destination: {
-                    ListEvents()
+                    ListEvents(event: filterEventsCategories(categorie: hobbi))
                 }, label: {
                 HStack{
                     
@@ -38,6 +39,7 @@ struct ListeCategorie: View {
 //        }.navigationBarHidden(true)
     }
 }
+
 
 struct ListeCategorie_Previews: PreviewProvider {
     static var previews: some View {

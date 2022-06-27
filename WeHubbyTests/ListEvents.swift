@@ -9,40 +9,41 @@ import SwiftUI
 
 struct ListEvents: View {
     
-    var width: CGFloat = UIScreen.main.bounds.width - 50
+    var width: CGFloat = UIScreen.main.bounds.width
 
+    var event : [Events]
     
     var body: some View {
         
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 
-            ForEach(evenements) { event in
+            ForEach(event) { eventlist in
                 
                
                     
                 VStack(spacing: 24){
-                    Image(event.eventPicture)
+                    Image(eventlist.eventPicture)
                         .resizable()
-                        .scaledToFit()
-                        .frame(width:width)
-                        .cornerRadius(24)
+                        .scaledToFill()
+                        .frame(width:width, height: 250)
+                        .clipped()
                         .shadow(radius: 4)
                     
                     HStack(spacing:30) {
                         VStack(spacing: 4) {
                             
-                            Text(event.eventName)
+                            Text(eventlist.eventName)
                                 .fontWeight(.semibold)
                                 .font(.system(size: 24))
                                 .foregroundColor(.black)
                             HStack(spacing: 16){
-                            Text("📍 \(event.eventPlace)")
+                            Text("📍 \(eventlist.eventPlace)")
                                     .fontWeight(.thin)
                                     .foregroundColor(.black)
 
                                  
-                            Text("📅 \(event.eventDate)")
+                            Text("📅 \(eventlist.eventDate)")
                                 .fontWeight(.thin)
                                 .foregroundColor(.black)
 
@@ -50,7 +51,7 @@ struct ListEvents: View {
                         }
                         
                         NavigationLink(destination: {
-                            DetailsEvents(event: event)
+                            DetailsEvents(event: eventlist)
                         }, label: {
                             Text("Voir")
                                 .font(.system(size: 20))
@@ -76,8 +77,9 @@ struct ListEvents: View {
     }
 }
 
+
 struct ListEvents_Previews: PreviewProvider {
     static var previews: some View {
-        ListEvents()
+        ListEvents(event: evenements)
     }
 }
