@@ -124,5 +124,29 @@ struct Chat : Identifiable {
     var message : String
 }
 
+// Contenus dans HobbyView
+struct TutosDetail: Identifiable {
+    var id = UUID()
+    var tutoImage : String
+    var tutoTitle : String
+    var tutoSubtitle : String
+    var creator: String
+    var creatorAvatar : String
+    var tutoDuration: String
+    var tutoParagraph1 : String
+    var tutoTitleParagraph1 : String
+    var tutoParagraph2 : String
+    var tutoTitleParagraph2 : String
+    var tutoParagraph3 : String
+    var tutoTitleParagraph3 : String
+    var tutos: [Tutos]
+    var tutoImageSecondary : [String]
+}
 
-
+// Commentaires dans HobbyDetailView
+struct CommentsHobby : Identifiable {
+    var id = UUID()
+    var userPics: String
+    var userName: String
+    var commDetailHobby : String
+}
