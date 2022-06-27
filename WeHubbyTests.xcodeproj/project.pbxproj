@@ -70,6 +70,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F34E3A62864B24F002EB5BB /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				5F818193285CB865003E72B2 /* ListEvents.swift */,
+				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
+				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
+				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
+				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
+				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		5F34E3A92864B2DB002EB5BB /* Profils */ = {
+			isa = PBXGroup;
+			children = (
+				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
+				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
+				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
+			);
+			path = Profils;
+			sourceTree = "<group>";
+		};
 		5FCBCA65285C64DD00B214DA = {
 			isa = PBXGroup;
 			children = (
@@ -92,19 +116,11 @@
 		5FCBCA70285C64DD00B214DA /* WeHubbyTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
-				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
-				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
-				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
 				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
-				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
-				5F818193285CB865003E72B2 /* ListEvents.swift */,
-				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
-				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
-				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
+				5F34E3A62864B24F002EB5BB /* Events */,
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
-				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
+				5F34E3A92864B2DB002EB5BB /* Profils */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
 				C739E0F42862FF9300C65E30 /* SwipeView.swift */,
 				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
