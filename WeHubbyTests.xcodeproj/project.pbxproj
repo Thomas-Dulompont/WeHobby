@@ -132,26 +132,18 @@
 		5FCBCA70285C64DD00B214DA /* WeHubbyTests */ = {
 			isa = PBXGroup;
 			children = (
-				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
-				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
-				7BD1F2922861FB2300EC2401 /* AmisView.swift */,
-				7BD1F2A72863573400EC2401 /* SearchBarView.swift */,
 				436C59822866126A002045CA /* InformationsHobby */,
-				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
 				7BD1F29C2863026B00EC2401 /* Message */,
-				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
-				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
+				C7B641D82869AB070017BCAA /* Map */,
+				C7B641D72869AAF70017BCAA /* Swipe */,
+				C7B641D92869AB390017BCAA /* Friends */,
 				5FEEAC72286076D00056D575 /* listeHobby.swift */,
 				5FEEAC6C285E095E0056D575 /* ListeCategorie.swift */,
+				5F297ED52861C3730045E8D1 /* ListeCategoriesHobbies.swift */,
 				5F818193285CB865003E72B2 /* ListEvents.swift */,
 				5F818195285CC4AB003E72B2 /* DetailsEvents.swift */,
-				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
-				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
 				5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */,
-				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
 				5FCBCA73285C64DD00B214DA /* ContentView.swift */,
-				C739E0F42862FF9300C65E30 /* SwipeView.swift */,
-				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
 				C77524682863CF6D0020368E /* DetailsCommunityView.swift */,
 				5FCBCA75285C64E000B214DA /* Assets.xcassets */,
 				5FCBCA77285C64E000B214DA /* Preview Content */,
@@ -171,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				5FCBCA7F285C64F700B214DA /* Buttons.swift */,
+				7BD1F2A72863573400EC2401 /* SearchBarView.swift */,
 				5FD2DB47285C6D1C003F3A69 /* Picker.swift */,
 			);
 			path = Elements;
@@ -185,6 +178,37 @@
 				7BD1F2A92864491100EC2401 /* MessageView.swift */,
 			);
 			path = Message;
+			sourceTree = "<group>";
+		};
+		C7B641D72869AAF70017BCAA /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				C739E0F8286311A000C65E30 /* SwipeCardView.swift */,
+				C739E0F42862FF9300C65E30 /* SwipeView.swift */,
+			);
+			path = Swipe;
+			sourceTree = "<group>";
+		};
+		C7B641D82869AB070017BCAA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5FEEAC7028606CCE0056D575 /* ShowEventonMap.swift */,
+				5FE7ECF02862FE7100FFB23C /* FilterEventOnMap.swift */,
+				5FEEAC6E28605E680056D575 /* OnlyMapView.swift */,
+				5FEEAC6A285DE86D0056D575 /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C7B641D92869AB390017BCAA /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				7BD1F2922861FB2300EC2401 /* AmisView.swift */,
+				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
+				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
+				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
