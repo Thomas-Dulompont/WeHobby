@@ -28,15 +28,42 @@ struct ProfilAmis: View {
     
     @State var imageName: String = "person.fill.badge.plus"
 
+    var friend: Friends
+    
+    @Environment(\.dismiss) var dismiss
+
     
     var body: some View {
-        if let user = userProfiles.first(where: { $0.isCurrentUser
-        }){
+        
             
             ZStack{
                 
                 VStack {
-                Image(user.userCover)
+                    HStack{
+                        
+                    
+                    
+                    Button{
+                                           dismiss()
+                                        } label: {
+                                            Image(systemName: "chevron.left")
+                                                .font(.system(size: 30))
+                                                .padding(10)
+                                                .background{
+                                                          Circle()
+                                                            .fill(.ultraThinMaterial)
+                                                    }
+                                            
+                                        }
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .padding(.leading, 6)
+                .zIndex(1)
+                
+                VStack {
+                Image(friend.userCover)
                     .resizable()
                     .scaledToFill()
                     .frame(width: width, height: 300)
@@ -79,7 +106,7 @@ struct ProfilAmis: View {
                         .padding(.leading, 20)
                         
                         
-                        Image(user.userPicture)
+                        Image(friend.userPicture)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 120, height: 120)
@@ -106,7 +133,7 @@ struct ProfilAmis: View {
                         .padding(.trailing, 20)
                     }
                     VStack{
-                        Text(user.userPsedo)
+                        Text(friend.userPsedo)
                             .font(.title)
                             .fontWeight(.medium)
                         
@@ -116,7 +143,7 @@ struct ProfilAmis: View {
                                 .foregroundColor(.accentColor)
                                 .font(.callout)
 
-                            Text(user.ville)
+                            Text(friend.ville)
                                 .foregroundColor(.accentColor)
                                 .font(.callout)
                             
@@ -130,7 +157,7 @@ struct ProfilAmis: View {
                             
                             
                                 
-                            Text(user.userTag[0].rawValue)
+                            Text(friend.userTag[0].rawValue)
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
@@ -138,7 +165,7 @@ struct ProfilAmis: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             
-                            Text(user.userTag[1].rawValue)
+                            Text(friend.userTag[1].rawValue)
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
@@ -146,7 +173,7 @@ struct ProfilAmis: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             
-                            Text(user.userTag[2].rawValue)
+                            Text(friend.userTag[2].rawValue)
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
@@ -157,7 +184,7 @@ struct ProfilAmis: View {
                             }
                         
                         
-                        Text(user.userBio)
+                        Text(friend.userBio)
                             .font(.system(size:16))
                             .frame(height: 70)
                             .padding(.horizontal)
@@ -176,7 +203,7 @@ struct ProfilAmis: View {
                         
                         HStack(spacing: 20){
                             
-                            ForEach(user.favoriteCategory) { favoris in
+                            ForEach(friend.favoriteCategory) { favoris in
                                 
                                 Image(favoris.picCategory)
                                     .resizable()
@@ -209,8 +236,7 @@ struct ProfilAmis: View {
                                 switch selectedTab {
                                 case .photos :
                                     
-                                    PicturesFriends(user: user)
-                                    
+Text("a faire")
                                 case .futurs:
                                     Text("ok")
                                 case .past :
@@ -256,12 +282,13 @@ struct ProfilAmis: View {
 //        }
 //        }
     }
+            .navigationBarHidden(true)
 }
 }
-}
+
 struct ProfilAmis_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilAmis()
+        ProfilAmis(friend: userProfiles[4])
     }
 }
 

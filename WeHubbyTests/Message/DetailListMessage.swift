@@ -13,23 +13,27 @@ struct DetailListMessage: View {
     var body: some View {
         
        
-      
+        if friend.isCurrentUser == false {
        
      
         ZStack(alignment: .bottomTrailing){
                 
+           
                 HStack {
                     
                     ZStack(alignment: .bottomTrailing) {
             Image("\(friend.userPicture)")
                 .resizable()
+                .scaledToFill()
+                .clipped()
                 .clipShape(Circle())
                 .frame(width: 80, height: 80, alignment: .center)
+                .shadow(radius:5)
                 .padding(2)
        
                         if friend.isOnline == true {
                             Circle()
-                                .frame(width: 20, height: 20)
+                                .frame(width: 24, height: 24)
                                 .foregroundColor(.green)
                         }
                         else {
@@ -42,11 +46,13 @@ struct DetailListMessage: View {
             VStack(alignment: .leading, spacing: 1){
             Text("\(friend.userPsedo)")
                     .font(.title2)
+                    .foregroundColor(.accentColor)
                     .bold()
                 
                 Text(friend.userBio)
-                    .font(.title2)
+                    .font(.system(size: 14))
                     .foregroundColor(.gray)
+                    .multilineTextAlignment(.leading)
                     
                  
 
@@ -55,15 +61,19 @@ struct DetailListMessage: View {
             }
                 
         }
-       
-        }.padding()
         
+        }.padding(.horizontal, 6)
+            .padding(.vertical, 2)
+            
+        } else {
+            Text("")
+        }
     }
     }
 
 
 struct DetailListMessage_Previews: PreviewProvider {
     static var previews: some View {
-        DetailListMessage(friend: userProfiles[0])
+        DetailListMessage(friend: userProfiles[1])
     }
 }

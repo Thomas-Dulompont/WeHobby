@@ -22,7 +22,7 @@ struct FilterEventOnMap: View {
         GridItem(.flexible()),
     ]
     
-    @State var backgroundButton : Color = .white
+//    @State var backgroundButton : Color = .white
     
     @Binding var selectedCategories : [Categoriz]
     
@@ -42,15 +42,15 @@ struct FilterEventOnMap: View {
             
             VStack(alignment: .leading, spacing: 25) {
                 
-                HStack{
-                    Text("Par date")
-                        .foregroundColor(.white)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                }.padding(.leading, 20)
+//                HStack{
+//                    Text("Par date")
+//                        .foregroundColor(.white)
+//                        .font(.title3)
+//                        .fontWeight(.bold)
+//                    
+//                    Spacer()
+//                    
+//                }.padding(.leading, 20)
                 
                 
                 HStack{
@@ -122,7 +122,7 @@ struct FilterEventOnMap: View {
                         } label: {
                             Image(picture.picCategory)
                                 .resizable()
-                                .frame(width: 48, height: 48)
+                                .frame(width: 44, height: 44)
                                 .padding(4)
                                 .background(isCategorySelected(categorie: picture) ? .white : .accentColor)
                                 .cornerRadius(16)

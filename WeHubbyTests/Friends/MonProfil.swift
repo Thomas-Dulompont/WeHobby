@@ -30,9 +30,11 @@ struct MonProfil: View {
     
     
     var body: some View {
+        
+        
         if let user = userProfiles.first(where: { $0.isCurrentUser
         }){
-            
+            NavigationView {
             ZStack{
                 
                 VStack {
@@ -68,8 +70,8 @@ struct MonProfil: View {
                                 
                                 
                                 
-                                Button {
-                                    
+                                NavigationLink {
+                                    EditMypROFILE()
                                 } label : {
                                     Image(systemName: "gearshape.2.fill")
                                         .font(.system(size:32))
@@ -222,6 +224,7 @@ struct MonProfil: View {
                 HStack {
                     
                     Spacer()
+                    
             Button {
                 
             } label : {
@@ -239,6 +242,8 @@ struct MonProfil: View {
                 }
                 }
             }
+            .navigationBarHidden(true)
+        }
         }
     }
 }
