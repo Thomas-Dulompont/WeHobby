@@ -72,7 +72,7 @@ var listTutosDetail: [TutosDetail] = [
 ]
 
 var listCommentsHobby: [CommentsHobby] = [
-    CommentsHobby(userPics: "cindie", userName: "cindie", commDetailHobby:" Waouh 😍 ! J'espère arriver à coudre la jupe de mes rêves"),
-    CommentsHobby(userPics: "morgan", userName: "Morgan", commDetailHobby:" Trop cool ! Merci pour les explications !")
+    CommentsHobby(user: userProfiles[0], commDetailHobby:" Waouh 😍 ! J'espère arriver à coudre la jupe de mes rêves"),
+    CommentsHobby(user: userProfiles[1], commDetailHobby:" Trop cool ! Merci pour les explications !")
 ]
 

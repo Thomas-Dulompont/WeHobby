@@ -164,8 +164,7 @@ struct TutosDetail: Identifiable {
 // Commentaires dans HobbyDetailView
 struct CommentsHobby : Identifiable {
     var id = UUID()
-    var userPics: String
-    var userName: String
+    var user: Friends
     var commDetailHobby : String
     
 }

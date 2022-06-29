@@ -13,7 +13,7 @@ struct CommentRawView: View {
     var body: some View {
   
    HStack(alignment: .top) {
- Image(commentsHobby.userPics)
+       Image(commentsHobby.user.userPicture)
                        .resizable()
                         .scaledToFit()
                         .clipShape(Circle())
@@ -23,7 +23,7 @@ struct CommentRawView: View {
                         .shadow(radius: 3)
                    
                    VStack(alignment: .leading) {
-                        Text(commentsHobby.userName)
+                       Text(commentsHobby.user.userPsedo)
                         Text(commentsHobby.commDetailHobby)
                    }
                }
