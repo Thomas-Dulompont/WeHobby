@@ -168,7 +168,6 @@ struct DetailsEvents: View {
                         Text("Informations pratiques")
                             .foregroundColor(.accentColor)
                             .fontWeight(.bold)
-                            .underline()
                             .frame(alignment: .leading)
                     }
                     .padding(.trailing,155)
@@ -199,7 +198,6 @@ struct DetailsEvents: View {
                         Text("Participants (\(event.participants.count))")
                             .foregroundColor(.accentColor)
                             .fontWeight(.bold)
-                            .underline()
                             .frame(alignment: .leading)
                     }
                     .padding(.trailing,220)

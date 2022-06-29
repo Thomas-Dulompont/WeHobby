@@ -119,7 +119,10 @@ struct Comments : Identifiable {
 
 
 // Profil Amis
-struct Friends : Identifiable {
+struct Friends : Identifiable, Equatable {
+    static func == (lhs: Friends, rhs: Friends) -> Bool {
+        return lhs.id == rhs.id
+    }
     var id = UUID()
     var userPsedo : String
     var userBio : String
@@ -136,7 +139,7 @@ struct Friends : Identifiable {
     var ville: String
 }
 
-struct Chat : Identifiable {
+struct Tchat : Identifiable {
     var id = UUID()
     var userChat : Friends
     var message : String

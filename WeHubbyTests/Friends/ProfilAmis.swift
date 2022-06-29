@@ -194,7 +194,6 @@ struct ProfilAmis: View {
                             Text("Loisirs favoris")
                                 .foregroundColor(.accentColor)
                                 .fontWeight(.bold)
-                                .underline()
                                 .frame(alignment: .leading)
                                 .padding(.leading,15)
                             
@@ -236,7 +235,7 @@ struct ProfilAmis: View {
                                 switch selectedTab {
                                 case .photos :
                                     
-Text("a faire")
+                                    PicturesFriends(user: friend)
                                 case .futurs:
                                     Text("ok")
                                 case .past :

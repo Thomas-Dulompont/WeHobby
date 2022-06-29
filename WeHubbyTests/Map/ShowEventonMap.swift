@@ -105,11 +105,6 @@ struct ShowEventonMap: View {
                     .cornerRadius(16)
                     .tag(index)
                     
-                    Image(systemName: "greaterthan.circle.fill")
-                        .font(.system(size: 40))
-                        .foregroundColor(.accentColor)
-                        .opacity(0.9)
-                        .offset(x: 160)
                 }
                 
             }

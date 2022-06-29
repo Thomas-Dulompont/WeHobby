@@ -17,7 +17,7 @@ struct SearchBarView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(Color(.systemGray))
-                    TextField("Search", text: $search)
+                    TextField("Recherche", text: $search)
                     Spacer()
                     Image(systemName: "mic.fill")
                         .foregroundColor(Color(.systemGray))

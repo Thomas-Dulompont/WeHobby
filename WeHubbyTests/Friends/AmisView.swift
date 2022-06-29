@@ -29,7 +29,6 @@ struct AmisView: View {
                     .font(.system(size: 18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .underline()
                     .padding(10)
                 Spacer()
             }
@@ -46,6 +45,7 @@ struct AmisView: View {
                         })
                     }
                 }.padding(.leading)
+                    .searchable(text: $searchText)
                 
                     
                 //                } else {
@@ -65,14 +65,13 @@ struct AmisView: View {
                     .font(.system(size:18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .underline()
                     .padding(10)
                 Spacer()
             }
             ScrollView(.vertical, showsIndicators: false) {
             ForEach(userProfiles) { profil1 in
                 NavigationLink(destination: {
-                    MessageView(friend: profil1)
+                    MessageView(user: profil1)
                 }, label: {
                 DetailListMessage(friend: profil1)
                 })
@@ -86,7 +85,7 @@ struct AmisView: View {
                .navigationBarHidden(true)
     }
     
-    
+
     }
     
     
@@ -99,3 +98,4 @@ struct SwiftUIView_Previews: PreviewProvider {
         AmisView(searchText: "alllo")
     }
 }
+
