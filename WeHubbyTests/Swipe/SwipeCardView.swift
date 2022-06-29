@@ -27,7 +27,7 @@ struct SwipeCardView: View {
                 )
             //Title
             VStack(alignment: .leading) {
-                Spacer().frame(height: 300)
+                Spacer()
                 Text(loisirs.hobbyName.uppercased())
                     .font(.largeTitle)
                     .foregroundColor(.white)
@@ -84,6 +84,7 @@ struct SwipeCardView: View {
                             .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                     }
                 }
+                Spacer().frame(height: 125)
             }.padding()
         }
     .offset(x: offset.width * 1)
@@ -138,7 +139,7 @@ struct SwipeCardView: View {
 
 struct SwipeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{SwipeCardView(loisirs:loisirs[0])}
+        SwipeCardView(loisirs:loisirs[0])
         
     }
 }

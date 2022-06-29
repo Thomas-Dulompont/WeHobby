@@ -9,15 +9,15 @@ import SwiftUI
 
 struct HobbyDetailView: View {
     
-    var tutosDetail: TutosDetail
+    var loisirs: Hobbies
    
     var body: some View {
     
         VStack (alignment: .leading){
-            Text(tutosDetail.tutoTitle)
+            Text(loisirs.tutoHobby[0].tutoTitle)
                 .font(.title)
             HStack (alignment: .top) {
-            Image(tutosDetail.creatorAvatar)
+                Image(loisirs.tutoHobby[0].creatorAvatar)
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
@@ -25,52 +25,36 @@ struct HobbyDetailView: View {
                 .overlay(
                     Circle().stroke(Color.gray, lineWidth: 1))
                 .shadow(radius: 3)
-                Text(tutosDetail.creator)
+                Text(loisirs.tutoHobby[0].creator)
                 Spacer()
                 // Bouton Partager
             }
             .padding(.bottom, 2.0)
             
-            Text(tutosDetail.tutoSubtitle)
+            Text(loisirs.tutoHobby[0].tutoSubtitle)
                 .font(.body)
                 .fontWeight(.semibold)
                 .padding(.bottom, 10.0)
             
-           ScrollView (.horizontal) {
-             HStack {
-             ForEach(tutosDetail.tutoImageSecondary, id:\.self) {
-                        image in Image(image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 240)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .overlay(
-                            RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
-                           .shadow(radius: 3)
-                }
-            }
-           }
-            .padding(.vertical, 12)
-            Text(tutosDetail.tutoTitleParagraph1)
+            Text(loisirs.tutoHobby[0].tutoTitleParagraph1)
                 .font(.title2)
-            Text(tutosDetail.tutoParagraph1)
+            Text(loisirs.tutoHobby[0].tutoParagraph1)
                 .padding(.bottom, 10)
-            Text(tutosDetail.tutoTitleParagraph2)
+            Text(loisirs.tutoHobby[0].tutoTitleParagraph2)
                 .font(.title2)
-            Text(tutosDetail.tutoParagraph2)
+            Text(loisirs.tutoHobby[0].tutoParagraph2)
                 .padding(.bottom, 10)
-            Text(tutosDetail.tutoTitleParagraph3)
+            Text(loisirs.tutoHobby[0].tutoTitleParagraph3)
                 .font(.title2)
-            Text(tutosDetail.tutoParagraph3)
+            Text(loisirs.tutoHobby[0].tutoParagraph3)
         }
-        // Sur le même thème
-        // Tags
+        
         .padding()
-        }
-        }
+    }
+}
 
 struct HobbyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyDetailView(tutosDetail: listTutosDetail[0])
+        HobbyDetailView(loisirs: loisirs[0])
     }
 }
