@@ -19,10 +19,13 @@ struct ShowEventonMap: View {
     
     var body: some View {
         
+        // Creation de la scroll Event sur la Map sous forme de TabView
         
         TabView(selection: $selectedEvent) {
             //            HStack(alignment: .center, spacing: 24) {
             ForEach(0..<evenement.count) { index in
+                
+                // on utilise les index pour lier à la map, les filtres et les span
                 let event = evenement[index]
                 
                 ZStack {
@@ -56,6 +59,7 @@ struct ShowEventonMap: View {
                                 }
                             }
                             
+                            // Button pour voir le détail de l'evenement
                             
                             NavigationLink {
                                 DetailsEvents(event: event)
@@ -80,6 +84,8 @@ struct ShowEventonMap: View {
                         //                        .foregroundColor(.gray)
                         //                        .opacity(0.7)
                         //                        .offset(x: 160, y: -44)
+                        
+                        // Button pour fermer la tabview grace à l'index
                         
                         Button {
                             selectedEvent = 999

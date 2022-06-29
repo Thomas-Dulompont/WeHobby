@@ -12,6 +12,8 @@ struct ListeCategorie: View {
         
 //        NavigationView {
         
+        //Liste Categories pour accèder aux events
+        
         VStack {
             
             List(categoris) { hobbi in

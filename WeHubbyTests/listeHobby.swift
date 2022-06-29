@@ -13,7 +13,11 @@ struct listeHobby: View {
     
     var body: some View {
         
+        
+        // Liste des loisirs, filtrés grâce à la func dans la navigationlink
         VStack {
+            
+            
             List(hobby) { hobb in
             HStack{
             Image(hobb.hobbyPic)

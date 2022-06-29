@@ -18,9 +18,10 @@ struct ListEvents: View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
                 
-            ForEach(event) { eventlist in
                 
-               
+                // Liste evenets triés par catégories dans la navigation link precedente
+                
+            ForEach(event) { eventlist in
                     
                 VStack(spacing: 24){
                     Image(eventlist.eventPicture)
@@ -59,7 +60,7 @@ struct ListEvents: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 24)
                                 .padding(.vertical,16)
-                                .background(Color("CustomColorGreen"))
+                                .background(Color.accentColor)
                                 .cornerRadius(28)
                                 .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
                         })

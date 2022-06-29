@@ -10,43 +10,67 @@ import SwiftUI
 struct MessageView: View {
     var friend : Friends
     @State var test : String = ""
+    
+    @Environment(\.dismiss) var dismiss
+      
+
     var body: some View {
         VStack {
-        HStack(alignment: .center) {
-            Image("\(friend.userPicture)")
-                .resizable()
-                .clipShape(Circle())
-                .frame(width: 56, height: 56, alignment: .center)
-                .padding(2)
-            
-            VStack(alignment: .leading, spacing: 2) {
-                Text("\(friend.userPsedo)")
-                    .font(.title2)
-                    .bold()
-                HStack {
-                    Text(friend.userTag[0].rawValue)
-                        .fontWeight(.semibold)
-                        .padding(.vertical, 5.0)
-                        .padding(.horizontal, 10.0)
-                        .background(.cyan)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                    
-                    Text(friend.userTag[0].rawValue)
-                        .fontWeight(.semibold)
-                        .padding(.vertical, 5.0)
-                        .padding(.horizontal, 10.0)
-                        .background(.cyan)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+            HStack {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.backward") // set image here
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.accentColor)
+                            .font(.system(size:24))
+                            .padding(8)
+                    }
+                    }
                 
+                Image("\(friend.userPicture)")
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
+                    .clipped()
+                    .frame(width: 60, height: 60, alignment: .center)
+                    .padding(2)
+                    .background(Color.accentColor)
+                    .clipShape(Circle())
+                
+                    Text("\(friend.userPsedo)")
+                        .font(.title2)
+                        .bold()
+                
+                Spacer()
+                    
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(Color("lightgray"))
+                        .cornerRadius(16)
+                        .frame(width: 100, height: 40, alignment: .center)
+                    HStack {
+
+                        Image(systemName: "phone.fill")
+                            .font(.system(size: 20))
+                        
+                        Divider().frame(maxHeight: 35)
+                        
+                        Image(systemName: "video.fill")
+                            .font(.system(size: 20))
+                        
+
+                        
+
+                    }
+                    
+                }
             }
-            Image(systemName: "phone")
-                .font(.title)
-            Image(systemName: "video")
-                .font(.title)
-        }
+            .padding(.trailing, 10)
+
+            Divider()
+            
           Spacer()
             MessageBoxView(isSend: true,textMessage: "Hola amigo")
             MessageBoxView(isSend: false, textMessage: "Je parle pas espagnol du coup")
@@ -56,12 +80,15 @@ struct MessageView: View {
                 .padding()
                 
         }
+        .navigationBarHidden(true)
+        
+       
         }
     }
 
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(friend : userProfiles[2])
+        MessageView(friend : userProfiles[1])
     }
 }

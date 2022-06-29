@@ -12,6 +12,9 @@ struct ListeCategoriesHobbies: View {
         NavigationView {
         VStack {
             
+            
+            // Liste des catégories pour accéder aux loisirs
+            
             List(categoris) { hobby in
                 NavigationLink(destination: {
                     listeHobby(hobby: filterHobbies(categorie: hobby))

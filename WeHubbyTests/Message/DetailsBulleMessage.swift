@@ -14,18 +14,26 @@ struct DetailsBulleMessage: View {
         
         
         
-        
+        if friend.isCurrentUser == false {
         VStack {
             Image("\(friend.userPicture)")
                 .resizable()
+                .scaledToFill()
                 .clipShape(Circle())
-                .frame(width: 60, height: 60, alignment: .center)
+                .clipped()
+                .frame(width: 80, height: 80, alignment: .center)
+                .shadow(radius:5)
             
             Text("\(friend.userPsedo)")
+                .fontWeight(.semibold)
             
-        }.padding(5)
+        }.padding(4)
         
+        } else {
+            Text("")
+        }
     }
+        
 }
 
 struct BulleMessageView_Previews: PreviewProvider {

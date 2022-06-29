@@ -41,7 +41,6 @@ struct SwipeView: View {
                 case .list:
                     ListeCategoriesHobbies()
                 }
-                
             }
             
 //            Divider()

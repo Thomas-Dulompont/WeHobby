@@ -12,67 +12,82 @@ struct AmisView: View {
     @State var searchText : String
     var body: some View {
         
+        NavigationView {
         VStack(alignment: .center, spacing: 0) {
             Text("Mes Amis")
                 .font(.title)
                 .foregroundColor(.accentColor)
                 .fontWeight(.bold)
-                .padding(15)
+//                .padding(15)
             
             Divider()
             
             SearchBarView()
             
             HStack {
-                Text("Amis en ligne")
+                Text("Mes Amis")
+                    .font(.system(size: 18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .padding(15)
+                    .underline()
+                    .padding(10)
                 Spacer()
             }
-            ScrollView(.horizontal){
-//                if searchText.isEmpty {
-                    HStack{
-                        ForEach(userProfiles) { profil in
-                            
-                            DetailsBulleMessage(friend: profil)
-                            
-                        }
-                    }.padding(.leading)
+            ScrollView(.horizontal, showsIndicators: false){
+                //                if searchText.isEmpty {
+                HStack{
                     
-//                } else {
-//                    HStack{
-//                        ForEach(userProfiles) { profil in
-//
-//                            DetailsBulleMessage(friend: profil)
-//                        }
-//                    }
-//            }
-            
-           
-            
-        }
+                    ForEach(userProfiles) { profil in
+                        
+                        NavigationLink(destination: {
+                            ProfilAmis(friend: profil)
+                        }, label: {
+                            DetailsBulleMessage(friend: profil)
+                        })
+                    }
+                }.padding(.leading)
+                
+                    
+                //                } else {
+                //                    HStack{
+                //                        ForEach(userProfiles) { profil in
+                //
+                //                            DetailsBulleMessage(friend: profil)
+                //                        }
+                //                    }
+                //            }
+                
+                
+                
+            }
             HStack {
                 Text("Conversations")
+                    .font(.system(size:18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .padding(15)
+                    .underline()
+                    .padding(10)
                 Spacer()
             }
+            ScrollView(.vertical, showsIndicators: false) {
             ForEach(userProfiles) { profil1 in
-                
+                NavigationLink(destination: {
+                    MessageView(friend: profil1)
+                }, label: {
                 DetailListMessage(friend: profil1)
-                
+                })
                 Divider()
+                    
             }
             Spacer()
-        
+            }
         }
         
-        
+               .navigationBarHidden(true)
     }
     
     
+    }
     
     
     
