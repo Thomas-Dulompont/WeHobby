@@ -63,7 +63,7 @@ struct Hobbies : Identifiable {
     var hobbyTags : [Tags]
     var hobbyEvents : [Events]
     var hobbyComs : [Comments]
-    var tutoHobby : [Tutos]
+    var tutoHobby : [TutosDetail]
     var category: Categoriz
 }
 
