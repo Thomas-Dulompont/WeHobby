@@ -8,15 +8,44 @@
 import SwiftUI
 
 struct SwipeView: View {
+    @State var selectedTab: ViewButtonEvent = .map
+
+    @State var currentTab = "Découverte"
+    
+    @State var tabBarOffset: CGFloat = 0
+
+    @Namespace var animation
     
     var body: some View {
-        VStack {
-            ZStack {
-                ForEach(loisirs) { loisir in
-                    SwipeCardView(loisirs: loisir)
+        NavigationView {
+
+        VStack(spacing: 0){
+                HStack{
+                    TabButtonEvent(title: "Découverte", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
+                    Spacer()
+                    TabButtonEvent(title: "Afficher la Liste", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .list)
                 }
-                Text("Test")
+                
+                
+//            Spacer()
+            
+            VStack {
+                switch selectedTab {
+                case .map:
+                    ZStack {
+                        ForEach(loisirs) { loisir in
+                            SwipeCardView(loisirs: loisir)
+                        }
+                    }
+                            
+                case .list:
+                    ListeCategoriesHobbies()
+                }
             }
+            
+//            Divider()
+        }        .navigationBarHidden(true)
+
         }
     }
 }

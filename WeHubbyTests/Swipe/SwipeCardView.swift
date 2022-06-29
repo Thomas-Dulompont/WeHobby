@@ -6,6 +6,9 @@ struct SwipeCardView: View {
     
     @State private var toggleShadowColor: Bool = false
     
+    var width: CGFloat = UIScreen.main.bounds.width
+    var heigth: CGFloat = UIScreen.main.bounds.height
+    
     var loisirs: Hobbies
     
     var body: some View {
@@ -15,7 +18,7 @@ struct SwipeCardView: View {
             Image(loisirs.hobbyPic)
                 .resizable()
                 .scaledToFill()
-                .frame(width: 400, height: 700)
+                .frame(width: width)
                 .clipped()
             
             //LinearShadow
@@ -24,7 +27,7 @@ struct SwipeCardView: View {
                 )
             //Title
             VStack(alignment: .leading) {
-                Spacer().frame(height: 100)
+                Spacer().frame(height: 300)
                 Text(loisirs.hobbyName.uppercased())
                     .font(.largeTitle)
                     .foregroundColor(.white)

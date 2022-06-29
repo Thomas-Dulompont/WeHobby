@@ -59,7 +59,7 @@ struct MapView: View {
             VStack {
                 switch selectedTab {
                 case .map:
-                    
+
                    OnlyMapView()
                             
                 case .list:
