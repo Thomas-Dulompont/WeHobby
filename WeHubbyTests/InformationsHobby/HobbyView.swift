@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct HobbyView: View {
-    
-    var tutosDetail: TutosDetail
-    var loisirs: Hobbies
-    var images: String
    
+    var loisirs: Hobbies
+    
     var body: some View {
         
     ScrollView {
@@ -20,16 +18,16 @@ struct HobbyView: View {
             Text(loisirs.tutoHobby[0].tutoTitle)
             .font(.title2)
             
-            NavigationLink  {
-                HobbyDetailView(tutosDetail: tutosDetail)
-            } label: {
-                Image(loisirs.tutoHobby[0].tutoImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 240)
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
-            }
+//            NavigationLink  {
+//                HobbyDetailView(tutosDetail: tutosDetail)
+//            } label: {
+//                Image(loisirs.tutoHobby[0].tutoImage)
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(height: 240)
+//                    .clipShape(RoundedRectangle(cornerRadius: 16))
+//                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+//            }
             
             Text(loisirs.tutoHobby[0].tutoSubtitle)
             .font(.body)
@@ -58,7 +56,7 @@ struct HobbyView: View {
         Spacer().frame(height: 40)
         
         // Liste Tuto View
-        ListeTutosDetail(listTutos: tutosDetail.tutos)
+        //ListeTutosDetail(listTutos: tutosDetail.tutos)
     }
     .padding()
     }
@@ -66,8 +64,6 @@ struct HobbyView: View {
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            HobbyView(tutosDetail: listTutosDetail[0], loisirs:loisirs[0], images: "bobines")
-        }
+        HobbyView(loisirs:loisirs[0])
     }
 }

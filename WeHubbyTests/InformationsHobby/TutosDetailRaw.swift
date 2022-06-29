@@ -38,6 +38,6 @@ struct TutosDetailRaw: View {
 
 struct TutosDetailRaw_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyView(tutosDetail: listTutosDetail[0], loisirs:loisirs[0], images: "bobines")
+        HobbyView(loisirs:loisirs[0])
     }
 }

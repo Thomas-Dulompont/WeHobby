@@ -72,16 +72,17 @@ struct SwipeCardView: View {
                     
                     Spacer()
                     //Button for LinkView
-                    Button("DECOUVRIR") {
-                        // Action on press
-                        print("test")
+                    NavigationLink {
+                        HobbyView(loisirs: loisirs)
+                    } label: {
+                        Text("DECOUVRIR")
+                            .font(.title3.bold())
+                            .frame(width: 150, height: 55)
+                            .background(Color("CustomColorGreen"))
+                            .cornerRadius(30)
+                            .foregroundColor(Color.white)
+                            .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                     }
-                    .font(.title3.bold())
-                    .frame(width: 150, height: 55)
-                    .background(Color("CustomColorGreen"))
-                    .cornerRadius(30)
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                 }
             }.padding()
         }
@@ -137,7 +138,7 @@ struct SwipeCardView: View {
 
 struct SwipeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipeCardView(loisirs:loisirs[0])
+        NavigationView{SwipeCardView(loisirs:loisirs[0])}
         
     }
 }
