@@ -10,59 +10,64 @@ import SwiftUI
 struct HobbyView: View {
     
     var tutosDetail: TutosDetail
+    var loisirs: Hobbies
     var images: String
    
     var body: some View {
         
-    VStack {
-
-        VStack (alignment: .leading){
-            Text(tutosDetail.tutoTitle)
-                .font(.title)
-                NavigationLink  {
-                    HobbyDetailView(tutosDetail: tutosDetail)
-                } label: {
-                    Image(tutosDetail.tutoImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 240)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
-                        .shadow(radius: 3)
-                }
-            Text(tutosDetail.tutoSubtitle)
-                .font(.body)
+    ScrollView {
+        VStack {
+            Text(loisirs.tutoHobby[0].tutoTitle)
+            .font(.title2)
+            
+            NavigationLink  {
+                HobbyDetailView(tutosDetail: tutosDetail)
+            } label: {
+                Image(loisirs.tutoHobby[0].tutoImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 240)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
             }
             
-            HStack (alignment: .top) {
-            Image(tutosDetail.creatorAvatar)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 30.0, alignment: .leading)
-                .overlay(
-                    Circle().stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
-                Text(tutosDetail.creator)
-                Spacer()
-                Text(tutosDetail.tutoDuration)
+            Text(loisirs.tutoHobby[0].tutoSubtitle)
+            .font(.body)
+            .italic()
+        }
+        
+        Spacer().frame(height: 20)
+        
+        HStack {
+            Spacer()
+            VStack(alignment: .trailing, spacing: 0.0) {
+                Text(loisirs.tutoHobby[0].creator)
+                Text(loisirs.tutoHobby[0].tutoDuration)
                         .font(.callout)
                         .fontWeight(.thin)
                         .multilineTextAlignment(.leading)
-                }
-            .padding (.bottom, 40.0)
-        
-ListeTutosDetail(listTutos: tutosDetail.tutos)
             }
-            .padding()
+            .padding(-15.0)
+            Image(loisirs.tutoHobby[0].creatorAvatar)
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .frame(width: 70.0)
         }
-        }
+        
+        Spacer().frame(height: 40)
+        
+        // Liste Tuto View
+        ListeTutosDetail(listTutos: tutosDetail.tutos)
+    }
+    .padding()
+    }
+}
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        HobbyView(tutosDetail: listTutosDetail[0], images: "bobines")
+            HobbyView(tutosDetail: listTutosDetail[0], loisirs:loisirs[0], images: "bobines")
         }
     }
 }
