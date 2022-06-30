@@ -151,7 +151,6 @@ struct MonProfil: View {
                                     Text("Loisirs favoris")
                                         .foregroundColor(.accentColor)
                                         .fontWeight(.bold)
-                                        .underline()
                                         .frame(alignment: .leading)
                                         .padding(.leading,15)
                                     
@@ -219,6 +218,8 @@ struct MonProfil: View {
                     
                 }
 //                .offset(y:170)
+                
+                if selectedTab == .photos {
                 VStack {
                     Spacer()
                 HStack {
@@ -240,6 +241,9 @@ struct MonProfil: View {
             .padding(.trailing, 15)
             .padding(.bottom, 15)
                 }
+                }
+                }else{
+                    Text("")
                 }
             }
             .navigationBarHidden(true)

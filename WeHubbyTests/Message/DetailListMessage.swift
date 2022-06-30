@@ -49,7 +49,9 @@ struct DetailListMessage: View {
                     .foregroundColor(.accentColor)
                     .bold()
                 
-                Text(friend.userBio)
+                
+                
+                Text(getLastMessage(user: friend))
                     .font(.system(size: 14))
                     .foregroundColor(.gray)
                     .multilineTextAlignment(.leading)
@@ -69,6 +71,18 @@ struct DetailListMessage: View {
             Text("")
         }
     }
+    
+    //fonction pour afficher le dernier message du chat
+    
+    func getLastMessage(user: Friends) -> String {
+        
+        if let tchat = allMessages[user.id], let message = tchat.last {
+            
+            return message.message
+        } else {
+            return "Lancez la discussion avec \(user.userPsedo)..."
+        }
+    }
     }
 
 
@@ -77,3 +91,5 @@ struct DetailListMessage_Previews: PreviewProvider {
         DetailListMessage(friend: userProfiles[1])
     }
 }
+
+

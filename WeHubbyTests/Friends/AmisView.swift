@@ -9,8 +9,21 @@ import SwiftUI
 
 struct AmisView: View {
     
+    
     @State var searchText : String
+    
+    
+    var searchResult: [Friends] {
+                if searchText.isEmpty {
+                    return userProfiles
+                } else {
+                    return userProfiles.filter { $0.userPsedo.lowercased().contains(searchText.lowercased()) }
+                }
+            }
+    
     var body: some View {
+        
+        
         
         NavigationView {
         VStack(alignment: .center, spacing: 0) {
@@ -22,14 +35,13 @@ struct AmisView: View {
             
             Divider()
             
-            SearchBarView()
+            SearchBarView(search: $searchText)
             
             HStack {
                 Text("Mes Amis")
                     .font(.system(size: 18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .underline()
                     .padding(10)
                 Spacer()
             }
@@ -37,7 +49,7 @@ struct AmisView: View {
                 //                if searchText.isEmpty {
                 HStack{
                     
-                    ForEach(userProfiles) { profil in
+                    ForEach(searchResult) { profil in
                         
                         NavigationLink(destination: {
                             ProfilAmis(friend: profil)
@@ -46,6 +58,7 @@ struct AmisView: View {
                         })
                     }
                 }.padding(.leading)
+                    .searchable(text: $searchText)
                 
                     
                 //                } else {
@@ -65,14 +78,13 @@ struct AmisView: View {
                     .font(.system(size:18))
                     .foregroundColor(.accentColor)
                     .fontWeight(.bold)
-                    .underline()
                     .padding(10)
                 Spacer()
             }
             ScrollView(.vertical, showsIndicators: false) {
-            ForEach(userProfiles) { profil1 in
+            ForEach(searchResult) { profil1 in
                 NavigationLink(destination: {
-                    MessageView(friend: profil1)
+                    MessageView(user: profil1)
                 }, label: {
                 DetailListMessage(friend: profil1)
                 })
@@ -86,7 +98,7 @@ struct AmisView: View {
                .navigationBarHidden(true)
     }
     
-    
+
     }
     
     
@@ -96,6 +108,7 @@ struct AmisView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        AmisView(searchText: "alllo")
+        AmisView(searchText: "")
     }
 }
+

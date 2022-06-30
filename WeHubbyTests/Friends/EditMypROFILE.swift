@@ -102,6 +102,7 @@ struct EditMypROFILE: View {
                         
                         VStack(spacing: 10){
                                 
+                            HStack(spacing: 30){
                             ZStack{
                                 Image(user.userPicture)
                                     .resizable()
@@ -126,6 +127,21 @@ struct EditMypROFILE: View {
                                         
                                         
                                 }
+                                Button {                                    
+                                    dismiss()
+                                } label : {
+                                    Image(systemName: "checkmark")
+                                        .font(.system(size:32))
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .background(Color.accentColor)
+                                        .clipShape(Circle())
+                                        .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
+                                }
+                                .padding(.trailing, 20)
+                            }
+                            .offset(x: 58)
+
                                 
                                 
                             Spacer().frame(height:20)
@@ -223,9 +239,10 @@ struct EditMypROFILE: View {
                                         .lineLimit(6)
                                         .font(.body)
                                         .multilineTextAlignment(.leading)
+                                        .padding(.horizontal)
                                         .background(Color("lightgray"))
                                         .cornerRadius(24)
-                                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 120, maxHeight: 180, alignment: .top)
+                                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 160, maxHeight: 260, alignment: .top)
                                     
 //                                    TextField("", text: $bio)
                                         
@@ -237,24 +254,7 @@ struct EditMypROFILE: View {
                             }
                             .offset(y: -35)
                             
-                            VStack(alignment: .center){
-                            Button {
-                                
-                            } label: {
-                                Text("Valider")
-                                    .font(.system(size: 20))
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 24)
-                                    .padding(.vertical,16)
-                                    .background(Color.accentColor)
-                                    .cornerRadius(28)
-                                    .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
-                            }
-                            .padding(.trailing, 20)
-                            .padding(.bottom, 30)
-                            
-                            }
+
                         }
                         .background(
                             RoundedRectangle(cornerRadius: 32, style: .continuous)
