@@ -62,7 +62,7 @@ ListeTutosDetail(listTutos: tutosDetail.tutos)
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        HobbyView(tutosDetail: listTutosDetail[1], images: "bobines")
+        HobbyView(tutosDetail: listTutosDetail[2], images: "instabroderie")
         }
     }
 }

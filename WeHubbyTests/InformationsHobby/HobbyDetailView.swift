@@ -71,6 +71,6 @@ struct HobbyDetailView: View {
 
 struct HobbyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyDetailView(tutosDetail: listTutosDetail[0])
+        HobbyDetailView(tutosDetail: listTutosDetail[2])
     }
 }
