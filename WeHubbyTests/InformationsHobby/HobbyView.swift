@@ -8,14 +8,7 @@
 import SwiftUI
 
 struct HobbyView: View {
-    @State var selectedTab: ViewButtonEvent = .map
-
-    @State var currentTab = "Découvrir"
     
-    @State var tabBarOffset: CGFloat = 0
-
-    @Namespace var animation
-   
     var loisirs: Hobbies
     var listTutos: [Tutos]
     
