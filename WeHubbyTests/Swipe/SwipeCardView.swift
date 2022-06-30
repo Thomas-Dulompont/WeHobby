@@ -85,7 +85,7 @@ struct SwipeCardView: View {
                             .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                     }
                 }
-                Spacer().frame(height: 125)
+                Spacer().frame(height: 75)
             }.padding()
         }
     .offset(x: offset.width * 1)
