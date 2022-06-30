@@ -15,7 +15,7 @@ struct HobbyDetailView: View {
     
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
-                DescHobbyDetail(title: loisirs.tutoHobby[0].tutoTitle, description: loisirs.tutoHobby[0].tutoSubtitle, creator: loisirs.tutoHobby[0].creator, image: loisirs.tutoHobby[0].tutoImage)
+                DescHobbyDetail(title: loisirs.tutoHobby[0].tutoTitle, description: loisirs.tutoHobby[0].tutoSubtitle, creator: loisirs.tutoHobby[0].creator, images: loisirs.tutoHobby[0].tutoImageSecondary)
                 
                 Divider()
                 Spacer().frame(height: 30)
@@ -41,7 +41,7 @@ struct DescHobbyDetail: View {
     var title: String
     var description: String
     var creator: String
-    var image: String
+    var images: [String]
     
     var body: some View {
         //Titre
@@ -60,12 +60,19 @@ struct DescHobbyDetail: View {
         .font(.body)
         
         //Image
-        Image(image)
-            .resizable()
-            .scaledToFill()
-            .frame(width: 375, height: 250)
-            .cornerRadius(16)
-            .clipped()
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(images, id:\.self) {
+                    image in
+                    Image(image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 330, height: 250)
+                        .cornerRadius(16)
+                        .clipped()
+                }
+            }
+        }
 
     }
 }
