@@ -30,7 +30,7 @@ struct SwipeView: View {
                 case .map:
                     ZStack {
                         ForEach(loisirs) { loisir in
-                            SwipeCardView(loisirs: loisir)
+                            SwipeCardView(loisirs: loisir, listTutos: listTutos)
                         }
                     }
                             

@@ -8,64 +8,88 @@
 import SwiftUI
 
 struct HobbyView: View {
+    @State var selectedTab: ViewButtonEvent = .map
+
+    @State var currentTab = "Découvrir"
+    
+    @State var tabBarOffset: CGFloat = 0
+
+    @Namespace var animation
    
     var loisirs: Hobbies
+    var listTutos: [Tutos]
     
     var body: some View {
-        
         NavigationView {
-            ScrollView {
-                VStack {
-                    Text(loisirs.tutoHobby[0].tutoTitle)
-                    .font(.title2)
-                    
-                    NavigationLink  {
-                        HobbyDetailView(loisirs: loisirs)
-                    } label: {
-                        Image(loisirs.tutoHobby[0].tutoImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 240)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
-                    }
-                    
-                    Text(loisirs.tutoHobby[0].tutoSubtitle)
-                    .font(.body)
-                    .italic()
-                }
-                
-                Spacer().frame(height: 20)
-                
-                HStack {
+        VStack(spacing: 0){
+                HStack{
+                    TabButtonEvent(title: "Découvrir", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
                     Spacer()
-                    VStack(alignment: .trailing, spacing: 0.0) {
-                        Text(loisirs.tutoHobby[0].creator)
-                        Text(loisirs.tutoHobby[0].tutoDuration)
-                                .font(.callout)
-                                .fontWeight(.thin)
-                                .multilineTextAlignment(.leading)
-                    }
-                    .padding(-15.0)
-                    Image(loisirs.tutoHobby[0].creatorAvatar)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                        .frame(width: 70.0)
+                    TabButtonEvent(title: "Communauté", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .list)
                 }
-                
-                Spacer().frame(height: 40)
-                
-                // Liste Tuto View
-                //ListeTutosDetail(listTutos: tutosDetail.tutos)
+            
+            VStack {
+                switch selectedTab {
+                case .map:
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack {
+                            Text(loisirs.tutoHobby[0].tutoTitle)
+                            .font(.title2)
+                            
+                            NavigationLink  {
+                                HobbyDetailView(loisirs: loisirs)
+                            } label: {
+                                Image(loisirs.tutoHobby[0].tutoImage)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 375)
+                                    .cornerRadius(16)
+                                    .clipped()
+                            }
+                            
+                            Text(loisirs.tutoHobby[0].tutoSubtitle)
+                            .font(.body)
+                        }
+                        
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 0.0) {
+                                Text(loisirs.tutoHobby[0].creator)
+                                Text(loisirs.tutoHobby[0].tutoDuration)
+                                        .font(.callout)
+                                        .fontWeight(.thin)
+                                        .multilineTextAlignment(.leading)
+                            }
+                            .padding(-15.0)
+                            Image(loisirs.tutoHobby[0].creatorAvatar)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(width: 70.0)
+                        }
+                        
+                        Spacer().frame(height: 40)
+                        
+                        // Liste Tuto View
+                        ListeTutosDetail(listTutos: listTutos)
+                    }
+                    .padding()
+                            
+                case .list:
+                    //AJOUTER VIEW POUR HOBBY EVENT
+                    ListEvents(event: evenements)
+                }
             }
-            .padding()
+        }
+        .navigationBarHidden(true)
         }
     }
 }
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyView(loisirs:loisirs[0])
+        HobbyView(loisirs:loisirs[0], listTutos: listTutos)
     }
 }

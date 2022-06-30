@@ -10,6 +10,7 @@ struct SwipeCardView: View {
     var heigth: CGFloat = UIScreen.main.bounds.height
     
     var loisirs: Hobbies
+    var listTutos: [Tutos]
     
     var body: some View {
         ZStack {
@@ -73,7 +74,7 @@ struct SwipeCardView: View {
                     Spacer()
                     //Button for LinkView
                     NavigationLink {
-                        HobbyView(loisirs: loisirs)
+                        HobbyView(loisirs: loisirs, listTutos: listTutos)
                     } label: {
                         Text("DECOUVRIR")
                             .font(.title3.bold())
@@ -139,7 +140,7 @@ struct SwipeCardView: View {
 
 struct SwipeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipeCardView(loisirs:loisirs[0])
+        SwipeCardView(loisirs:loisirs[0], listTutos: listTutos)
         
     }
 }

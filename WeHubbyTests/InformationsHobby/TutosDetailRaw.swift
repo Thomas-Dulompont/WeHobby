@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct TutosDetailRaw: View {
-    var tutos : Tutos
+    
+    var listTutos: Tutos
+    
     var body: some View {
 
         HStack {
-            Image(tutos.tutoImage)
+            Image(listTutos.tutoImage)
                 .resizable()
                 .frame(width: 130.0, height: 100.0)
                 .scaledToFit()
                 .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
+                .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
             
             VStack(alignment: .leading){
-                Text(tutos.tutoTitle)
+                Text(listTutos.tutoTitle)
                     .font(.body)
-                Text(tutos.creator)
+                Text(listTutos.creator)
                     .font(.callout)
                     .fontWeight(.thin)
             }
@@ -38,6 +38,6 @@ struct TutosDetailRaw: View {
 
 struct TutosDetailRaw_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyView(loisirs:loisirs[0])
+        TutosDetailRaw(listTutos: listTutos[0])
     }
 }

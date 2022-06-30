@@ -13,42 +13,20 @@ struct HobbyDetailView: View {
    
     var body: some View {
     
-        VStack (alignment: .leading){
-            Text(loisirs.tutoHobby[0].tutoTitle)
-                .font(.title)
-            HStack (alignment: .top) {
-                Image(loisirs.tutoHobby[0].creatorAvatar)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 30.0, alignment: .leading)
-                .overlay(
-                    Circle().stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
-                Text(loisirs.tutoHobby[0].creator)
-                Spacer()
-                // Bouton Partager
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                DescHobbyDetail(title: loisirs.tutoHobby[0].tutoTitle, description: loisirs.tutoHobby[0].tutoSubtitle, creator: loisirs.tutoHobby[0].creator, image: loisirs.tutoHobby[0].tutoImage)
+                
+                Divider()
+                Spacer().frame(height: 30)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph1, paragraph: loisirs.tutoHobby[0].tutoParagraph1)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph2, paragraph: loisirs.tutoHobby[0].tutoParagraph2)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph3, paragraph: loisirs.tutoHobby[0].tutoParagraph3)
             }
-            .padding(.bottom, 2.0)
-            
-            Text(loisirs.tutoHobby[0].tutoSubtitle)
-                .font(.body)
-                .fontWeight(.semibold)
-                .padding(.bottom, 10.0)
-            
-            Text(loisirs.tutoHobby[0].tutoTitleParagraph1)
-                .font(.title2)
-            Text(loisirs.tutoHobby[0].tutoParagraph1)
-                .padding(.bottom, 10)
-            Text(loisirs.tutoHobby[0].tutoTitleParagraph2)
-                .font(.title2)
-            Text(loisirs.tutoHobby[0].tutoParagraph2)
-                .padding(.bottom, 10)
-            Text(loisirs.tutoHobby[0].tutoTitleParagraph3)
-                .font(.title2)
-            Text(loisirs.tutoHobby[0].tutoParagraph3)
         }
-        
         .padding()
     }
 }
@@ -56,5 +34,60 @@ struct HobbyDetailView: View {
 struct HobbyDetailView_Previews: PreviewProvider {
     static var previews: some View {
         HobbyDetailView(loisirs: loisirs[0])
+    }
+}
+
+struct DescHobbyDetail: View {
+    var title: String
+    var description: String
+    var creator: String
+    var image: String
+    
+    var body: some View {
+        //Titre
+        Text(title)
+            .font(.title2)
+            .fontWeight(.medium)
+            .foregroundColor(Color("CustomColorGreen"))
+        
+        //Auteur
+        Text("Par : \(creator)")
+            .padding(.bottom)
+            .foregroundColor(.gray)
+        
+        //Description
+        Text(description)
+        .font(.body)
+        
+        //Image
+        Image(image)
+            .resizable()
+            .scaledToFill()
+            .frame(width: 375)
+            .cornerRadius(16)
+            .clipped()
+
+    }
+}
+
+struct TextHobbyDetail: View {
+    var title: String
+    var paragraph: String
+    
+    var body: some View {
+        //Titre
+        Text(title)
+            .font(.title3)
+            .fontWeight(.medium)
+            .padding(.bottom, 1.0)
+            .foregroundColor(Color("CustomColorGreen"))
+            
+        
+        //Paragraphe
+        Text(paragraph)
+        
+        //Separateur
+        Divider()
+        Spacer().frame(height: 30)
     }
 }
