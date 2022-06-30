@@ -22,7 +22,7 @@ struct DetailsBulleMessage: View {
                 .clipShape(Circle())
                 .clipped()
                 .frame(width: 80, height: 80, alignment: .center)
-                .shadow(radius:5)
+                .shadow(color: .gray, radius: 5, y: 5)
             
             Text("\(friend.userPsedo)")
                 .fontWeight(.semibold)

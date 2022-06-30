@@ -18,34 +18,28 @@ struct SwipeView: View {
     
     var body: some View {
         NavigationView {
-
-        VStack(spacing: 0){
-                HStack{
-                    TabButtonEvent(title: "Découverte", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
-                    Spacer()
-                    TabButtonEvent(title: "Afficher la Liste", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .list)
-                }
-                
-                
-//            Spacer()
-            
-            VStack {
-                switch selectedTab {
-                case .map:
-                    ZStack {
-                        ForEach(loisirs) { loisir in
-                            SwipeCardView(loisirs: loisir)
-                        }
+            VStack(spacing: 0){
+                    HStack{
+                        TabButtonEvent(title: "Découverte", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
+                        Spacer()
+                        TabButtonEvent(title: "Afficher la Liste", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .list)
                     }
-                            
-                case .list:
-                    ListeCategoriesHobbies()
+                
+                VStack {
+                    switch selectedTab {
+                    case .map:
+                        ZStack {
+                            ForEach(loisirs) { loisir in
+                                SwipeCardView(loisirs: loisir, listTutos: listTutos)
+                            }
+                        }
+                                
+                    case .list:
+                        ListeCategoriesHobbies()
+                    }
                 }
             }
-            
-//            Divider()
-        }        .navigationBarHidden(true)
-
+            .navigationBarHidden(true)
         }
     }
 }

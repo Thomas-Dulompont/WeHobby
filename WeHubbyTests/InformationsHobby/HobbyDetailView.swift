@@ -9,68 +9,92 @@ import SwiftUI
 
 struct HobbyDetailView: View {
     
-    var tutosDetail: TutosDetail
+    var loisirs: Hobbies
    
     var body: some View {
     
-        VStack (alignment: .leading){
-            Text(tutosDetail.tutoTitle)
-                .font(.title)
-            HStack (alignment: .top) {
-            Image(tutosDetail.creatorAvatar)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 30.0, alignment: .leading)
-                .overlay(
-                    Circle().stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
-                Text(tutosDetail.creator)
-                Spacer()
-                // Bouton Partager
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                DescHobbyDetail(title: loisirs.tutoHobby[0].tutoTitle, description: loisirs.tutoHobby[0].tutoSubtitle, creator: loisirs.tutoHobby[0].creator, images: loisirs.tutoHobby[0].tutoImageSecondary)
+                
+                Divider()
+                Spacer().frame(height: 30)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph1, paragraph: loisirs.tutoHobby[0].tutoParagraph1)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph2, paragraph: loisirs.tutoHobby[0].tutoParagraph2)
+                
+                TextHobbyDetail(title: loisirs.tutoHobby[0].tutoTitleParagraph3, paragraph: loisirs.tutoHobby[0].tutoParagraph3)
             }
-            .padding(.bottom, 2.0)
-            
-            Text(tutosDetail.tutoSubtitle)
-                .font(.body)
-                .fontWeight(.semibold)
-                .padding(.bottom, 10.0)
-            
-           ScrollView (.horizontal) {
-             HStack {
-             ForEach(tutosDetail.tutoImageSecondary, id:\.self) {
-                        image in Image(image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 240)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .overlay(
-                            RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
-                           .shadow(radius: 3)
-                }
-            }
-           }
-            .padding(.vertical, 12)
-            Text(tutosDetail.tutoTitleParagraph1)
-                .font(.title2)
-            Text(tutosDetail.tutoParagraph1)
-                .padding(.bottom, 10)
-            Text(tutosDetail.tutoTitleParagraph2)
-                .font(.title2)
-            Text(tutosDetail.tutoParagraph2)
-                .padding(.bottom, 10)
-            Text(tutosDetail.tutoTitleParagraph3)
-                .font(.title2)
-            Text(tutosDetail.tutoParagraph3)
         }
-        // Sur le même thème
-        // Tags
         .padding()
-        }
-        }
+    }
+}
 
 struct HobbyDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyDetailView(tutosDetail: listTutosDetail[2])
+        HobbyDetailView(loisirs: loisirs[0])
+    }
+}
+
+struct DescHobbyDetail: View {
+    var title: String
+    var description: String
+    var creator: String
+    var images: [String]
+    
+    var body: some View {
+        //Titre
+        Text(title)
+            .font(.title2)
+            .fontWeight(.medium)
+            .foregroundColor(Color("CustomColorGreen"))
+        
+        //Auteur
+        Text("Par : \(creator)")
+            .padding(.bottom)
+            .foregroundColor(.gray)
+        
+        //Description
+        Text(description)
+        .font(.body)
+        
+        //Image
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(images, id:\.self) {
+                    image in
+                    Image(image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 330, height: 250)
+                        .cornerRadius(16)
+                        .clipped()
+                }
+            }
+        }
+
+    }
+}
+
+struct TextHobbyDetail: View {
+    var title: String
+    var paragraph: String
+    
+    var body: some View {
+        //Titre
+        Text(title)
+            .font(.title3)
+            .fontWeight(.medium)
+            .padding(.bottom, 1.0)
+            .foregroundColor(Color("CustomColorGreen"))
+            
+        
+        //Paragraphe
+        Text(paragraph)
+        
+        //Separateur
+        Divider()
+        Spacer().frame(height: 30)
     }
 }

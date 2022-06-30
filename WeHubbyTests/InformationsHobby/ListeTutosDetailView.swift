@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct ListeTutosDetail: View {
+    
     var listTutos: [Tutos]
+    
     var body: some View {
         ScrollView {
-            ForEach(listTutos) { tutos in
-                TutosDetailRaw(tutos: tutos)
+            ForEach(listTutos) { listTuto in
+                TutosDetailRaw(listTutos: listTuto)
             }
         }
     }
