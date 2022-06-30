@@ -42,7 +42,7 @@ struct HobbyView: View {
                                 Image(loisirs.tutoHobby[0].tutoImage)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 375)
+                                    .frame(width: 375, height: 250)
                                     .cornerRadius(16)
                                     .clipped()
                             }

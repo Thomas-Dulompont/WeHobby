@@ -63,7 +63,7 @@ struct DescHobbyDetail: View {
         Image(image)
             .resizable()
             .scaledToFill()
-            .frame(width: 375)
+            .frame(width: 375, height: 250)
             .cornerRadius(16)
             .clipped()
 
