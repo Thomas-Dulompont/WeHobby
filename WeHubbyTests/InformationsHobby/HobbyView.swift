@@ -20,16 +20,6 @@ struct HobbyView: View {
     var listTutos: [Tutos]
     
     var body: some View {
-        VStack(spacing: 0){
-                HStack{
-                    TabButtonEvent(title: "Découvrir", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
-                    Spacer()
-                    TabButtonEvent(title: "Communauté", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .list)
-                }
-            
-            VStack {
-                switch selectedTab {
-                case .map:
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
                             Text(loisirs.tutoHobby[0].tutoTitle)
@@ -75,13 +65,6 @@ struct HobbyView: View {
                         ListeTutosDetail(listTutos: listTutos)
                     }
                     .padding()
-                            
-                case .list:
-                    //AJOUTER VIEW POUR HOBBY EVENT
-                    ListEvents(event: evenements)
-                }
-            }
-        }
     }
 }
 
