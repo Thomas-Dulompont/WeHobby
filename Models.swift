@@ -86,7 +86,7 @@ enum TypeEvents: String {
     case distanc = "En visio"
 }
 
-struct Events : Identifiable, Equatable {
+class Events : Identifiable, Equatable, ObservableObject {
     static func == (lhs: Events, rhs: Events) -> Bool {
         return lhs.id == rhs.id
     }
@@ -100,11 +100,27 @@ struct Events : Identifiable, Equatable {
     var type : TypeEvents
     var eventPicture : String
     var participants : [Friends]
-    var participate : Bool
+    @Published var participate : Bool
     var comms : [Comments]
     var coordonnnes : CLLocationCoordinate2D
     var lieuComplet : String
     var catego : Categoriz
+    
+    init(eventName : String, eventHobby : Hobbies, eventPlace : String, eventDate : String, eventDesc : String, type : TypeEvents, eventPicture : String, participants : [Friends], participate : Bool, comms : [Comments], coordonnnes : CLLocationCoordinate2D, lieuComplet : String, catego : Categoriz){
+        self.eventName = eventName
+        self.eventHobby = eventHobby
+        self.eventPlace = eventPlace
+        self.eventDate = eventDate
+        self.eventDesc = eventDesc
+        self.type = type
+        self.eventPicture = eventPicture
+        self.participants = participants
+        self.participate = participate
+        self.comms = comms
+        self.coordonnnes = coordonnnes
+        self.lieuComplet = lieuComplet
+        self.catego = catego
+    }
 }
 
 

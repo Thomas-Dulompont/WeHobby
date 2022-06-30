@@ -81,6 +81,7 @@ struct MessageView: View {
                 ScrollView {
                     
                     VStack(spacing: 10) {
+                        
                         ForEach(allMessagesView) { messages in
                             
                             if messages.userChat.id == userProfiles[0].id {

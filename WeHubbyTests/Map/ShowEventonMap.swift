@@ -118,8 +118,8 @@ struct ShowEventonMap: View {
             //                    }
             
             
-        } .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(height: 170)
+        } .tabViewStyle(.page(indexDisplayMode: .always))
+            .frame(height: 250)
         
             .offset(y: -230)
         

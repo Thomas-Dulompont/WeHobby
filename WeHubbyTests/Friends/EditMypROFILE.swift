@@ -239,10 +239,10 @@ struct EditMypROFILE: View {
                                         .lineLimit(6)
                                         .font(.body)
                                         .multilineTextAlignment(.leading)
-                                        .padding(2)
+                                        .padding(.horizontal)
                                         .background(Color("lightgray"))
                                         .cornerRadius(24)
-                                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 120, maxHeight: 220, alignment: .top)
+                                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 40, idealHeight: 160, maxHeight: 260, alignment: .top)
                                     
 //                                    TextField("", text: $bio)
                                         

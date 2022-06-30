@@ -9,8 +9,21 @@ import SwiftUI
 
 struct AmisView: View {
     
+    
     @State var searchText : String
+    
+    
+    var searchResult: [Friends] {
+                if searchText.isEmpty {
+                    return userProfiles
+                } else {
+                    return userProfiles.filter { $0.userPsedo.lowercased().contains(searchText.lowercased()) }
+                }
+            }
+    
     var body: some View {
+        
+        
         
         NavigationView {
         VStack(alignment: .center, spacing: 0) {
@@ -22,7 +35,7 @@ struct AmisView: View {
             
             Divider()
             
-            SearchBarView()
+            SearchBarView(search: $searchText)
             
             HStack {
                 Text("Mes Amis")
@@ -36,7 +49,7 @@ struct AmisView: View {
                 //                if searchText.isEmpty {
                 HStack{
                     
-                    ForEach(userProfiles) { profil in
+                    ForEach(searchResult) { profil in
                         
                         NavigationLink(destination: {
                             ProfilAmis(friend: profil)
@@ -69,7 +82,7 @@ struct AmisView: View {
                 Spacer()
             }
             ScrollView(.vertical, showsIndicators: false) {
-            ForEach(userProfiles) { profil1 in
+            ForEach(searchResult) { profil1 in
                 NavigationLink(destination: {
                     MessageView(user: profil1)
                 }, label: {
@@ -95,7 +108,7 @@ struct AmisView: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        AmisView(searchText: "alllo")
+        AmisView(searchText: "")
     }
 }
 
