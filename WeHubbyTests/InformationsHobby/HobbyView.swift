@@ -20,7 +20,6 @@ struct HobbyView: View {
     var listTutos: [Tutos]
     
     var body: some View {
-        NavigationView {
         VStack(spacing: 0){
                 HStack{
                     TabButtonEvent(title: "Découvrir", currentTab: $currentTab, animation: animation, selectedTab: $selectedTab, buttonName: .map)
@@ -82,8 +81,6 @@ struct HobbyView: View {
                     ListEvents(event: evenements)
                 }
             }
-        }
-        .navigationBarHidden(true)
         }
     }
 }
