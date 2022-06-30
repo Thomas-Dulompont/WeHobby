@@ -18,8 +18,9 @@ struct MessageView: View {
     @State private var textMessage: String = ""
     
     @Environment(\.dismiss) var dismiss
-      
-
+    
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -33,7 +34,7 @@ struct MessageView: View {
                             .font(.system(size:24))
                             .padding(8)
                     }
-                    }
+                }
                 
                 Image("\(user.userPicture)")
                     .resizable()
@@ -45,19 +46,19 @@ struct MessageView: View {
                     .background(Color.accentColor)
                     .clipShape(Circle())
                 
-                    Text("\(user.userPsedo)")
-                        .font(.title2)
-                        .bold()
+                Text("\(user.userPsedo)")
+                    .font(.title2)
+                    .bold()
                 
                 Spacer()
-                    
+                
                 ZStack {
                     Rectangle()
                         .foregroundColor(Color("lightgray"))
                         .cornerRadius(16)
                         .frame(width: 100, height: 40, alignment: .center)
                     HStack {
-
+                        
                         Image(systemName: "phone.fill")
                             .font(.system(size: 20))
                         
@@ -66,15 +67,15 @@ struct MessageView: View {
                         Image(systemName: "video.fill")
                             .font(.system(size: 20))
                         
-
                         
-
+                        
+                        
                     }
                     
                 }
             }
             .padding(.trailing, 10)
-
+            
             Divider()
             
             ScrollViewReader { value in
@@ -82,12 +83,13 @@ struct MessageView: View {
                     
                     VStack(spacing: 10) {
                         
+                        
                         ForEach(allMessagesView) { messages in
                             
                             if messages.userChat.id == userProfiles[0].id {
                                 
                                 HStack{
-                                Text(messages.message)
+                                    Text(messages.message)
                                         .bold()
                                         .foregroundColor(.white)
                                         .padding()
@@ -95,15 +97,15 @@ struct MessageView: View {
                                         .cornerRadius(24)
                                         .frame(maxWidth: UIScreen.main.bounds.width - 25, alignment: .trailing)
                                         .padding(.trailing, 5)
-                                
-                            }
-                            .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
+                                    
+                                }
+                                .frame(width: UIScreen.main.bounds.width, alignment: .trailing)
                                 
                             } else {
                                 
                                 HStack {
                                     
-                                Text(messages.message)
+                                    Text(messages.message)
                                         .bold()
                                         .foregroundColor(.white)
                                         .padding()
@@ -111,40 +113,53 @@ struct MessageView: View {
                                         .cornerRadius(24)
                                         .frame(maxWidth: UIScreen.main.bounds.width - 25, alignment: .leading)
                                         .padding(.leading, 5)
+                                    
+                                }
+                                .frame(width: UIScreen.main.bounds.width, alignment: .leading)
+                            }
                             
-                        }
-                        .frame(width: UIScreen.main.bounds.width, alignment: .leading)
-                        }
-                      
                         }
                         .onAppear {
-                            value.scrollTo(allMessagesView.last?.id, anchor: .center)
+                            value.scrollTo(allMessagesView.last?.id, anchor: .bottom)
                             
+                            
+                        }
+                        .onChange(of: allMessagesView) { newValue in
+                            DispatchQueue.main.async {
+                                value.scrollTo(allMessagesView.last?.id, anchor: .bottom)
+                            }
+                            
+                        }
                     }
-                    }
-                    }
+                    
                 }
+            }
             .padding(.vertical)
             
             Spacer()
             
             VStack {
                 HStack{
-                TextField("Tapez votre message ici...", text: $textMessage)
-                    .foregroundColor(.black)
-                    .padding(.vertical, 7)
-                    .padding(.horizontal)
-                    .background(Color.white)
-                    .cornerRadius(20)
-                    .onSubmit {
-                        allMessagesView.append(Tchat(userChat: userProfiles[0], message: textMessage))
-                        textMessage = ""
+                    TextField("Tapez votre message ici...", text: $textMessage)
+                        .foregroundColor(.black)
+                        .padding(.vertical, 7)
+                        .padding(.horizontal)
+                        .background(Color.white)
+                        .cornerRadius(20)
+                        .onSubmit {
+                            allMessagesView.append(Tchat(userChat: userProfiles[0], message: textMessage))
+                            textMessage = ""
+                            
+                            
+                        }
                     
-               
+                    Button {
+                        
+                    } label : {
+                        Image(systemName: "paperplane.circle.fill")
+                            .foregroundColor(.white)
+                            .font(.system(size:32))
                     }
-                    Image(systemName: "paperplane.circle.fill")
-                        .foregroundColor(.white)
-                        .font(.system(size:32))
                 }
             }
             .padding()
@@ -158,9 +173,9 @@ struct MessageView: View {
             
             
         }
-       
-        }
+        
     }
+}
 
 
 struct MessageView_Previews: PreviewProvider {

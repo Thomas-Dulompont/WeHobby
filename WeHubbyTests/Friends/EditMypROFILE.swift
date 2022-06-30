@@ -209,7 +209,7 @@ struct EditMypROFILE: View {
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                 
@@ -218,7 +218,7 @@ struct EditMypROFILE: View {
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                         

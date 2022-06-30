@@ -99,7 +99,7 @@ class Events : Identifiable, Equatable, ObservableObject {
     var eventDesc : String
     var type : TypeEvents
     var eventPicture : String
-    var participants : [Friends]
+    @Published var participants : [Friends]
     @Published var participate : Bool
     var comms : [Comments]
     var coordonnnes : CLLocationCoordinate2D
@@ -155,10 +155,13 @@ struct Friends : Identifiable, Equatable {
     var ville: String
 }
 
-struct Tchat : Identifiable {
+struct Tchat : Identifiable, Hashable {
     var id = UUID()
     var userChat : Friends
     var message : String
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(message)
+    }
 }
 
 // Contenus dans HobbyView

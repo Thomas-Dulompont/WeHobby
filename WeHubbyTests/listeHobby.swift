@@ -19,7 +19,10 @@ struct listeHobby: View {
             
             
             List(hobby) { hobb in
-            HStack{
+                NavigationLink {
+                    HobbyView(loisirs: hobb, listTutos: listTutos)
+                } label: {
+                HStack{
             Image(hobb.hobbyPic)
                 .resizable()
                 .scaledToFill()
@@ -35,7 +38,7 @@ struct listeHobby: View {
         }
         }
         }
-        
+        }
     }
 }
 

@@ -19,6 +19,8 @@
 		5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818195285CC4AB003E72B2 /* DetailsEvents.swift */; };
 		5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F818197285CCFFD003E72B2 /* ProfilAmis.swift */; };
 		5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */; };
+		5FA5F7BF286E2A040007A804 /* FutursEventsProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA5F7BE286E2A040007A804 /* FutursEventsProfil.swift */; };
+		5FA5F7C1286E2EC10007A804 /* EventOrganinizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA5F7C0286E2EC10007A804 /* EventOrganinizer.swift */; };
 		5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */; };
 		5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA73285C64DD00B214DA /* ContentView.swift */; };
 		5FCBCA76285C64E000B214DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCBCA75285C64E000B214DA /* Assets.xcassets */; };
@@ -59,6 +61,9 @@
 		5F818195285CC4AB003E72B2 /* DetailsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEvents.swift; sourceTree = "<group>"; };
 		5F818197285CCFFD003E72B2 /* ProfilAmis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilAmis.swift; sourceTree = "<group>"; };
 		5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesFriends.swift; sourceTree = "<group>"; };
+		5FA5F7BE286E2A040007A804 /* FutursEventsProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutursEventsProfil.swift; sourceTree = "<group>"; };
+		5FA5F7C0286E2EC10007A804 /* EventOrganinizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOrganinizer.swift; sourceTree = "<group>"; };
+		5FA5F7C2286E33040007A804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5FCBCA6E285C64DD00B214DA /* WeHobby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeHobby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeHubbyTestsApp.swift; sourceTree = "<group>"; };
 		5FCBCA73285C64DD00B214DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +139,7 @@
 		5FCBCA70285C64DD00B214DA /* WeHubbyTests */ = {
 			isa = PBXGroup;
 			children = (
+				5FA5F7C2286E33040007A804 /* Info.plist */,
 				436C59822866126A002045CA /* InformationsHobby */,
 				7BD1F29C2863026B00EC2401 /* Message */,
 				C7B641D82869AB070017BCAA /* Map */,
@@ -208,6 +214,8 @@
 				7BD1F2922861FB2300EC2401 /* AmisView.swift */,
 				5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */,
 				5FE7ECEE2861FA7A00FFB23C /* MonProfil.swift */,
+				5FA5F7C0286E2EC10007A804 /* EventOrganinizer.swift */,
+				5FA5F7BE286E2A040007A804 /* FutursEventsProfil.swift */,
 				5FD55B91286B341500C400D4 /* EditMypROFILE.swift */,
 				5F818197285CCFFD003E72B2 /* ProfilAmis.swift */,
 			);
@@ -296,6 +304,7 @@
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
 				C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */,
 				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,
+				5FA5F7BF286E2A040007A804 /* FutursEventsProfil.swift in Sources */,
 				5FEEAC7128606CCE0056D575 /* ShowEventonMap.swift in Sources */,
 				7BD1F2912861F87400EC2401 /* DetailsBulleMessage.swift in Sources */,
 				5FE7ECF12862FE7100FFB23C /* FilterEventOnMap.swift in Sources */,
@@ -316,6 +325,7 @@
 				5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */,
 				7BD1F2A42863221200EC2401 /* DetailListMessage.swift in Sources */,
 				436C598A28661371002045CA /* ListeTutosDetailView.swift in Sources */,
+				5FA5F7C1286E2EC10007A804 /* EventOrganinizer.swift in Sources */,
 				5F818198285CCFFD003E72B2 /* ProfilAmis.swift in Sources */,
 				436C598628661331002045CA /* HobbyDetailView.swift in Sources */,
 				5F818194285CB865003E72B2 /* ListEvents.swift in Sources */,
@@ -451,10 +461,10 @@
 				DEVELOPMENT_TEAM = CJCGG2B2V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeHubbyTests/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "On a besoin de votre localisation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,10 +491,10 @@
 				DEVELOPMENT_TEAM = CJCGG2B2V5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeHubbyTests/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "On a besoin de votre localisation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

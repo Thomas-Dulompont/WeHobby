@@ -17,11 +17,18 @@ struct DetailsEvents: View {
     
     @State var buttonImage: String = "heart"
     
+    
+    func setListParticip() {
+        if !event.participate && event.participants[0].userPsedo == "Cindie" {
+            event.participants.removeFirst()
+        }
+    }
+   
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             
             VStack {
-                
                 ZStack {
                     Image(event.eventPicture)
                         .resizable()
@@ -77,7 +84,16 @@ struct DetailsEvents: View {
                 HStack(spacing: 20) {
                     
                     Button {
-                        event.participate.toggle()
+                        
+                        withAnimation {
+                        if event.participate && event.participants[0].userPsedo == "Cindie" {
+                            event.participate = false
+                            event.participants.removeFirst()
+                        }else {
+                            event.participate = true
+                            event.participants.insert(userProfiles[0], at: 0)
+                        }
+                        }
                     } label: {
                         HStack {
                             withAnimation{
@@ -186,6 +202,7 @@ struct DetailsEvents: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         
                         HStack(spacing: -30){
+                            
                             ForEach(event.participants) { participant in
                                 
                                 Image(participant.userPicture)
@@ -194,7 +211,6 @@ struct DetailsEvents: View {
                                     .frame(width: 70)
                                     .clipped()
                                     .clipShape(Circle())
-                                    .shadow(radius: 5)
                                     .padding(4)
                                     .background(Color.white)
                                     .clipShape(Circle())
@@ -218,6 +234,9 @@ struct DetailsEvents: View {
                     }
                     .padding(.trailing,200)
                 }
+            }
+            .onAppear{
+                setListParticip()
             }
             
             

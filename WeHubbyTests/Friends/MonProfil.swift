@@ -112,7 +112,7 @@ struct MonProfil: View {
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                     
@@ -120,7 +120,7 @@ struct MonProfil: View {
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                     
@@ -128,14 +128,14 @@ struct MonProfil: View {
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                     Text("+")
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
-                                        .background(.cyan)
+                                        .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
                                         .cornerRadius(10)
                                 }
@@ -196,9 +196,12 @@ struct MonProfil: View {
                                             PicturesFriends(user: user)
                                             
                                         case .futurs:
-                                            Text("ok")
+                                            
+                                            FutursEventsProfil()
+                                            
                                         case .past :
-                                            Text("ko")
+                                            
+                                            EventOrganinizer()
                                         }
                                     }
                                 }

@@ -161,7 +161,7 @@ struct ProfilAmis: View {
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
-                                    .background(.cyan)
+                                    .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             
@@ -169,7 +169,7 @@ struct ProfilAmis: View {
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
-                                    .background(.cyan)
+                                    .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             
@@ -177,7 +177,7 @@ struct ProfilAmis: View {
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
-                                    .background(.cyan)
+                                    .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
                                     .cornerRadius(10)
                             
@@ -237,9 +237,12 @@ struct ProfilAmis: View {
                                     
                                     PicturesFriends(user: friend)
                                 case .futurs:
-                                    Text("ok")
+
+                                    FutursEventsProfil()
+                                    
                                 case .past :
-                                    Text("ko")
+
+                                    EventOrganinizer()
                                 }
                             }
                         }
