@@ -44,12 +44,13 @@ struct HobbyView: View {
                                         .fontWeight(.thin)
                                         .multilineTextAlignment(.leading)
                             }
-                            .padding(-15.0)
+                            .padding(.trailing, -5.0)
                             Image(loisirs.tutoHobby[0].creatorAvatar)
                                 .resizable()
-                                .scaledToFit()
-                                .clipShape(Circle())
-                                .frame(width: 70.0)
+                                .scaledToFill()
+                                .frame(width: 70, height: 70)
+                                .cornerRadius(50)
+                                .clipped()
                         }
                         
                         Spacer().frame(height: 40)
@@ -63,6 +64,6 @@ struct HobbyView: View {
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyView(loisirs:loisirs[0], listTutos: listTutos)
+        HobbyView(loisirs:loisirs[1], listTutos: listTutos)
     }
 }
