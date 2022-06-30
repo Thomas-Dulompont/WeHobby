@@ -9,60 +9,60 @@ import SwiftUI
 
 struct HobbyView: View {
     
-    var tutosDetail: TutosDetail
-    var images: String
-   
+    var loisirs: Hobbies
+    var listTutos: [Tutos]
+    
     var body: some View {
-        
-    VStack {
-
-        VStack (alignment: .leading){
-            Text(tutosDetail.tutoTitle)
-                .font(.title)
-                NavigationLink  {
-                    HobbyDetailView(tutosDetail: tutosDetail)
-                } label: {
-                    Image(tutosDetail.tutoImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 240)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
-                        .shadow(radius: 3)
-                }
-            Text(tutosDetail.tutoSubtitle)
-                .font(.body)
-            }
-            
-            HStack (alignment: .top) {
-            Image(tutosDetail.creatorAvatar)
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 30.0, alignment: .leading)
-                .overlay(
-                    Circle().stroke(Color.gray, lineWidth: 1))
-                .shadow(radius: 3)
-                Text(tutosDetail.creator)
-                Spacer()
-                Text(tutosDetail.tutoDuration)
-                        .font(.callout)
-                        .fontWeight(.thin)
-                        .multilineTextAlignment(.leading)
-                }
-            .padding (.bottom, 40.0)
-        
-ListeTutosDetail(listTutos: tutosDetail.tutos)
-            }
-            .padding()
-        }
-        }
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack {
+                            Text(loisirs.tutoHobby[0].tutoTitle)
+                            .font(.title2)
+                            
+                            NavigationLink  {
+                                HobbyDetailView(loisirs: loisirs)
+                            } label: {
+                                Image(loisirs.tutoHobby[0].tutoImage)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 375, height: 250)
+                                    .cornerRadius(16)
+                                    .clipped()
+                            }
+                            
+                            Text(loisirs.tutoHobby[0].tutoSubtitle)
+                            .font(.body)
+                        }
+                        
+                        Spacer().frame(height: 20)
+                        
+                        HStack {
+                            Spacer()
+                            VStack(alignment: .trailing, spacing: 0.0) {
+                                Text(loisirs.tutoHobby[0].creator)
+                                Text(loisirs.tutoHobby[0].tutoDuration)
+                                        .font(.callout)
+                                        .fontWeight(.thin)
+                                        .multilineTextAlignment(.leading)
+                            }
+                            .padding(-15.0)
+                            Image(loisirs.tutoHobby[0].creatorAvatar)
+                                .resizable()
+                                .scaledToFit()
+                                .clipShape(Circle())
+                                .frame(width: 70.0)
+                        }
+                        
+                        Spacer().frame(height: 40)
+                        
+                        // Liste Tuto View
+                        ListeTutosDetail(listTutos: listTutos)
+                    }
+                    .padding()
+    }
+}
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-        HobbyView(tutosDetail: listTutosDetail[0], images: "bobines")
-        }
+        HobbyView(loisirs:loisirs[0], listTutos: listTutos)
     }
 }

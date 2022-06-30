@@ -10,6 +10,7 @@ struct SwipeCardView: View {
     var heigth: CGFloat = UIScreen.main.bounds.height
     
     var loisirs: Hobbies
+    var listTutos: [Tutos]
     
     var body: some View {
         ZStack {
@@ -27,7 +28,7 @@ struct SwipeCardView: View {
                 )
             //Title
             VStack(alignment: .leading) {
-                Spacer().frame(height: 300)
+                Spacer()
                 Text(loisirs.hobbyName.uppercased())
                     .font(.largeTitle)
                     .foregroundColor(.white)
@@ -72,17 +73,19 @@ struct SwipeCardView: View {
                     
                     Spacer()
                     //Button for LinkView
-                    Button("DECOUVRIR") {
-                        // Action on press
-                        print("test")
+                    NavigationLink {
+                        HobbyView(loisirs: loisirs, listTutos: listTutos)
+                    } label: {
+                        Text("DECOUVRIR")
+                            .font(.title3.bold())
+                            .frame(width: 150, height: 55)
+                            .background(Color("CustomColorGreen"))
+                            .cornerRadius(30)
+                            .foregroundColor(Color.white)
+                            .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                     }
-                    .font(.title3.bold())
-                    .frame(width: 150, height: 55)
-                    .background(Color("CustomColorGreen"))
-                    .cornerRadius(30)
-                    .foregroundColor(Color.white)
-                    .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)
                 }
+                Spacer().frame(height: 125)
             }.padding()
         }
     .offset(x: offset.width * 1)
@@ -137,7 +140,7 @@ struct SwipeCardView: View {
 
 struct SwipeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipeCardView(loisirs:loisirs[0])
+        SwipeCardView(loisirs:loisirs[0], listTutos: listTutos)
         
     }
 }
