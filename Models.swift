@@ -128,8 +128,7 @@ class Events : Identifiable, Equatable, ObservableObject {
 
 struct Comments : Identifiable {
     var id = UUID()
-    var userPics: String
-    var userName: String
+    var userComment: Friends
     var commDetail: String
 }
 
@@ -210,3 +209,5 @@ let filteredEventsCategories = evenements.filter { event in
 
 return filteredEventsCategories
 }
+
+

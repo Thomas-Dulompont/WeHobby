@@ -84,18 +84,10 @@ struct ProfilAmis: View {
                     HStack(spacing: 30){
                         Button {
                             
-                            if imageName == "person.fill.badge.plus" {
-                                
-                            imageName = "person.fill.badge.minus"
-                            } else {
-                                
-                            imageName = "person.fill.badge.plus"
-                            }
                             
-//                            user.isFriend.toggle()
                             
                         } label : {
-                            Image(systemName: imageName)
+                            Image(systemName: friend.isFriend == true ? "person.fill.badge.plus" : "person.fill.badge.minus")
                                 .font(.system(size:32))
                                 .foregroundColor(.white)
                                 .padding()
@@ -119,8 +111,9 @@ struct ProfilAmis: View {
                         
                         
                         
-                        Button {
-                            
+                        NavigationLink {
+                            MessageView(user: friend)
+
                         } label : {
                             Image(systemName: "ellipsis.bubble.fill")
                                 .font(.system(size:32))

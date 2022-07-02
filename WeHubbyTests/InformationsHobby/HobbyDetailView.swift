@@ -48,13 +48,14 @@ struct DescHobbyDetail: View {
         Text(title)
             .font(.title2)
             .fontWeight(.medium)
-            .foregroundColor(Color("CustomColorGreen"))
+            .foregroundColor(Color.accentColor)
         
         //Auteur
         Text("Par : \(creator)")
-            .padding(.bottom)
+            .italic()
             .foregroundColor(.gray)
-        
+            .padding(.bottom)
+
         //Description
         Text(description)
         .font(.body)
@@ -92,9 +93,10 @@ struct TextHobbyDetail: View {
         
         //Paragraphe
         Text(paragraph)
+            .font(.system(size: 15))
         
         //Separateur
         Divider()
-        Spacer().frame(height: 30)
+        Spacer().frame(width: 260)
     }
 }

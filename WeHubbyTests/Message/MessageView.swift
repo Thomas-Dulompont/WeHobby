@@ -56,16 +56,16 @@ struct MessageView: View {
                     Rectangle()
                         .foregroundColor(Color("lightgray"))
                         .cornerRadius(16)
-                        .frame(width: 100, height: 40, alignment: .center)
+                        .frame(width: 100, height: 44, alignment: .center)
                     HStack {
                         
                         Image(systemName: "phone.fill")
-                            .font(.system(size: 20))
+                            .font(.system(size: 24))
                         
                         Divider().frame(maxHeight: 35)
                         
                         Image(systemName: "video.fill")
-                            .font(.system(size: 20))
+                            .font(.system(size: 24))
                         
                         
                         

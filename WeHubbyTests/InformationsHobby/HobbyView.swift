@@ -12,6 +12,9 @@ struct HobbyView: View {
     var loisirs: Hobbies
     var listTutos: [Tutos]
     
+    var width: CGFloat = UIScreen.main.bounds.width
+
+    
     var body: some View {
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
@@ -24,8 +27,7 @@ struct HobbyView: View {
                                 Image(loisirs.tutoHobby[0].tutoImage)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 375, height: 250)
-                                    .cornerRadius(16)
+                                    .frame(width: width, height: 250)
                                     .clipped()
                             }
                             
@@ -39,6 +41,8 @@ struct HobbyView: View {
                             Spacer()
                             VStack(alignment: .trailing, spacing: 0.0) {
                                 Text(loisirs.tutoHobby[0].creator)
+                                    .foregroundColor(.gray)
+                                    .italic()
                                 Text(loisirs.tutoHobby[0].tutoDuration)
                                         .font(.callout)
                                         .fontWeight(.thin)
@@ -48,10 +52,11 @@ struct HobbyView: View {
                             Image(loisirs.tutoHobby[0].creatorAvatar)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 70, height: 70)
+                                .frame(width: 50, height: 50)
                                 .cornerRadius(50)
                                 .clipped()
                         }
+                        .padding(.trailing, 10)
                         
                         Spacer().frame(height: 40)
                         
@@ -64,6 +69,6 @@ struct HobbyView: View {
 
 struct HobbyView_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyView(loisirs:loisirs[1], listTutos: listTutos)
+        HobbyView(loisirs:loisirs[0], listTutos: listTutos)
     }
 }

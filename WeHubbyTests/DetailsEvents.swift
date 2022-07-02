@@ -23,7 +23,7 @@ struct DetailsEvents: View {
             event.participants.removeFirst()
         }
     }
-   
+    
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -64,7 +64,7 @@ struct DetailsEvents: View {
                 }
                 
                 HStack(spacing:14) {
-                    VStack(spacing: 4) {
+                    VStack(spacing: 8) {
                         Text(event.eventName)
                             .fontWeight(.semibold)
                             .font(.system(size: 28))
@@ -86,13 +86,13 @@ struct DetailsEvents: View {
                     Button {
                         
                         withAnimation {
-                        if event.participate && event.participants[0].userPsedo == "Cindie" {
-                            event.participate = false
-                            event.participants.removeFirst()
-                        }else {
-                            event.participate = true
-                            event.participants.insert(userProfiles[0], at: 0)
-                        }
+                            if event.participate && event.participants[0].userPsedo == "Cindie" {
+                                event.participate = false
+                                event.participants.removeFirst()
+                            }else {
+                                event.participate = true
+                                event.participants.insert(userProfiles[0], at: 0)
+                            }
                         }
                     } label: {
                         HStack {
@@ -154,11 +154,12 @@ struct DetailsEvents: View {
                 Divider().frame(width: width)
                     .padding()
                 
-                VStack(spacing: 16){
+                VStack(spacing: 20){
                     
                     Text(event.eventDesc)
-                        .font(.system(size:16))
-                        .padding(.horizontal, 20)
+                    //                        .font(.system(size:16))
+                        .frame(width: 300)
+                        .padding(.horizontal, 24)
                     
                     
                     HStack {
@@ -190,6 +191,9 @@ struct DetailsEvents: View {
                         
                     }
                     .frame(width: 320)
+                    .padding()
+                    .background(Color("whitty"))
+                    .cornerRadius(24)
                     
                     HStack {
                         
@@ -229,10 +233,45 @@ struct DetailsEvents: View {
                         Text("Commentaires (\(event.comms.count))")
                             .foregroundColor(.accentColor)
                             .fontWeight(.bold)
-                            .underline()
                             .frame(alignment: .leading)
                     }
                     .padding(.trailing,200)
+                    
+                    VStack(spacing: 10){
+                        
+                        ForEach(event.comms) { com in
+                            NavigationLink {
+                                ProfilAmis(friend: com.userComment)
+                            } label: {
+                                HStack(spacing: 20) {
+                                    Image(com.userComment.userPicture)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 70)
+                                        .clipped()
+                                        .clipShape(Circle())
+                                    
+                                    
+                                    VStack(alignment: .leading, spacing: 0){
+                                        
+                                        Text(com.userComment.userPsedo)
+                                            .foregroundColor(.accentColor)
+                                        
+                                        
+                                        Text(com.commDetail)
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.black)
+                                            .frame(width: 260, height: 60)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(.trailing, 10)
+                                    }
+                                }
+                            }
+                            Divider().frame(width: 260)
+                        }
+                        .padding(.horizontal, 20)
+                    }
+                    .padding(.bottom, 20)
                 }
             }
             .onAppear{
