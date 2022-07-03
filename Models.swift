@@ -44,7 +44,7 @@ enum Tags: String {
     case sport = "Sport"
     case crea = "Création"
     case sante = "Santé"
-    case art = "Artistique"
+    case art = "Art"
     case epicur = "Epicurieux"
     case nuit = "Nocturne"
     case aventu = "Aventure"

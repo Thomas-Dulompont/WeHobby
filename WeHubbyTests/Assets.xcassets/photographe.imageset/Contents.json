@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Capture d’écran 2022-07-03 à 16.11.55.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
