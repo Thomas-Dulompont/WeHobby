@@ -62,7 +62,7 @@ struct Hobbies : Identifiable {
     var hobbyPic : String
     var hobbyTags : [Tags]
     var hobbyEvents : [Events]
-    var hobbyComs : [Comments]
+    var hobbyComs : [CommentsHobby]
     var tutoHobby : [TutosDetail]
     var category: Categoriz
 }
@@ -208,6 +208,14 @@ let filteredEventsCategories = evenements.filter { event in
 }
 
 return filteredEventsCategories
+
 }
 
 
+func filterEventByHobbies (hobby: Hobbies) -> [Events] {
+    let filteredEventByHobbies = evenements.filter { events in
+        events.eventHobby.id == hobby.id
+    }
+    
+    return filteredEventByHobbies
+}

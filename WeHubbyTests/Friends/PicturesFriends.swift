@@ -28,14 +28,14 @@ struct PicturesFriends: View {
             //Spacer()
             ScrollView(.vertical, showsIndicators: false){
                 ZStack {
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 2) {
+                    LazyVGrid(columns: columns, alignment: .center, spacing: 4) {
                         
                         ForEach(user.pictures, id: \.self) { picture in
                             
                             Image(picture)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(width: 125, height:125)
+                                .frame(width: 127, height:127)
                                 .clipped()
                                 .onTapGesture {
                                     print("Ranking")

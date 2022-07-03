@@ -19,7 +19,7 @@ struct DetailsEvents: View {
     
     
     func setListParticip() {
-        if !event.participate && event.participants[0].userPsedo == "Cindie" {
+        if !event.participate && event.participants[0].userPsedo == "Cindoushka" {
             event.participants.removeFirst()
         }
     }
@@ -85,7 +85,7 @@ struct DetailsEvents: View {
                     Button {
                         
                         withAnimation {
-                            if event.participate && event.participants[0].userPsedo == "Cindie" {
+                            if event.participate && event.participants[0].userPsedo == "Cindoushka" {
                                 event.participate = false
                                 event.participants.removeFirst()
                             }else {

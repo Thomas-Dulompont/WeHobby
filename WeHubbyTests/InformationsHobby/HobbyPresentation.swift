@@ -15,7 +15,7 @@ struct HobbyPresentation: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        
             VStack(spacing: 16) {
                 
                 
@@ -49,6 +49,8 @@ struct HobbyPresentation: View {
                 .padding(.trailing, 90)
                 
                 Divider()
+                
+                ScrollView(.vertical, showsIndicators: false) {
                 HStack(spacing: 16) {
                     
                     
@@ -109,7 +111,7 @@ struct HobbyPresentation: View {
                 }
                 
                 NavigationLink {
-                    
+                    ListEvents(event: filterEventByHobbies(hobby: hobbi) )
                 } label: {
                     HStack {
                         Text("Évènements")
@@ -131,7 +133,7 @@ struct HobbyPresentation: View {
                 }
                 
                 NavigationLink {
-                    
+                    CommunauteHobbies(hobby: hobbi)
                 } label: {
                     HStack {
                         Text("Communauté")
@@ -159,6 +161,6 @@ struct HobbyPresentation: View {
 
 struct HobbyPresentation_Previews: PreviewProvider {
     static var previews: some View {
-        HobbyPresentation(hobbi: loisirs[1])
+        HobbyPresentation(hobbi: loisirs[0])
     }
 }

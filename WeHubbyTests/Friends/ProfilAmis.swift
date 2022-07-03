@@ -87,7 +87,7 @@ struct ProfilAmis: View {
                             
                             
                         } label : {
-                            Image(systemName: friend.isFriend == true ? "person.fill.badge.plus" : "person.fill.badge.minus")
+                            Image(systemName: friend.isFriend == true ? "person.fill.badge.minus" : "person.fill.badge.plus")
                                 .font(.system(size:32))
                                 .foregroundColor(.white)
                                 .padding()
