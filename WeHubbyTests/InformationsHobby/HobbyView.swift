@@ -20,6 +20,8 @@ struct HobbyView: View {
                         VStack {
                             Text(loisirs.tutoHobby[0].tutoTitle)
                             .font(.title2)
+                            .fontWeight(.semibold)
+                            .foregroundColor(.accentColor)
                             
                             NavigationLink  {
                                 HobbyDetailView(loisirs: loisirs)
@@ -29,6 +31,9 @@ struct HobbyView: View {
                                     .scaledToFill()
                                     .frame(width: width, height: 250)
                                     .clipped()
+                                    .shadow(color: .gray, radius: 5, x: 0, y: 5)
+                                    .padding(.bottom, 10)
+
                             }
                             
                             Text(loisirs.tutoHobby[0].tutoSubtitle)
@@ -43,10 +48,18 @@ struct HobbyView: View {
                                 Text(loisirs.tutoHobby[0].creator)
                                     .foregroundColor(.gray)
                                     .italic()
+                                
+                                HStack(spacing: 4){
+                                    
+                                    Image(systemName: "timer")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.gray)
+                                    
                                 Text(loisirs.tutoHobby[0].tutoDuration)
                                         .font(.callout)
                                         .fontWeight(.thin)
                                         .multilineTextAlignment(.leading)
+                                }
                             }
                             .padding(.trailing, -5.0)
                             Image(loisirs.tutoHobby[0].creatorAvatar)

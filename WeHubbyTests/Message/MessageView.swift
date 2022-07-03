@@ -169,6 +169,7 @@ struct MessageView: View {
         .navigationBarHidden(true)
         
         .onAppear{
+            
             self.allMessagesView = allMessages[user.id]!
             
             

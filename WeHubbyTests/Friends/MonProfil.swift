@@ -108,36 +108,36 @@ struct MonProfil: View {
                                     
                                     
                                     
-                                    Text(user.userTag[0].rawValue)
+                                    Text(user.userTag[0].rawValue.uppercased())
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
                                         .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
-                                        .cornerRadius(10)
+                                        .cornerRadius(8)
                                     
-                                    Text(user.userTag[1].rawValue)
+                                    Text(user.userTag[1].rawValue.uppercased())
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
                                         .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
-                                        .cornerRadius(10)
+                                        .cornerRadius(8)
                                     
-                                    Text(user.userTag[2].rawValue)
+                                    Text(user.userTag[2].rawValue.uppercased())
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
                                         .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
-                                        .cornerRadius(10)
+                                        .cornerRadius(8)
                                     Text("+")
                                         .fontWeight(.semibold)
                                         .padding(.vertical, 5.0)
                                         .padding(.horizontal, 10.0)
                                         .background(Color("CustomColorBlue"))
                                         .foregroundColor(.white)
-                                        .cornerRadius(10)
+                                        .cornerRadius(8)
                                 }
                                 
                                 
@@ -212,7 +212,7 @@ struct MonProfil: View {
                             .offset(y: -35)
                         }
                         .background(
-                            RoundedRectangle(cornerRadius: 32, style: .continuous)
+                            RoundedRectangle(cornerRadius: 40, style: .continuous)
                                 .foregroundColor(.white)
                             //                                .frame(height: 100)
 //                                .padding(.top, 15)

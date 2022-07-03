@@ -74,7 +74,7 @@ struct SwipeCardView: View {
                     Spacer()
                     //Button for LinkView
                     NavigationLink {
-                        HobbyView(loisirs: loisirs, listTutos: listTutos)
+                        HobbyPresentation(hobbi: loisirs)
                     } label: {
                         Text("DECOUVRIR")
                             .font(.title3.bold())

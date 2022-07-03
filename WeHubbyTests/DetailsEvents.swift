@@ -35,9 +35,8 @@ struct DetailsEvents: View {
                         .scaledToFill()
                         .frame(width:width, height: 250)
                         .clipped()
-                    //                    .cornerRadius(24)
-                        .shadow(radius: 4)
                         .ignoresSafeArea()
+                        .shadow(color: .gray, radius: 5, x: 0, y: 5)
                         .padding(.bottom, 15)
                     
                     HStack {

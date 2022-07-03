@@ -21,6 +21,7 @@
 		5F81819C285CFB6F003E72B2 /* PicturesFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F81819B285CFB6F003E72B2 /* PicturesFriends.swift */; };
 		5FA5F7BF286E2A040007A804 /* FutursEventsProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA5F7BE286E2A040007A804 /* FutursEventsProfil.swift */; };
 		5FA5F7C1286E2EC10007A804 /* EventOrganinizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA5F7C0286E2EC10007A804 /* EventOrganinizer.swift */; };
+		5FA5F7CC2871ADB60007A804 /* HobbyPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA5F7CB2871ADB60007A804 /* HobbyPresentation.swift */; };
 		5FCBCA72285C64DD00B214DA /* WeHubbyTestsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */; };
 		5FCBCA74285C64DD00B214DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCBCA73285C64DD00B214DA /* ContentView.swift */; };
 		5FCBCA76285C64E000B214DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FCBCA75285C64E000B214DA /* Assets.xcassets */; };
@@ -64,6 +65,7 @@
 		5FA5F7BE286E2A040007A804 /* FutursEventsProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutursEventsProfil.swift; sourceTree = "<group>"; };
 		5FA5F7C0286E2EC10007A804 /* EventOrganinizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOrganinizer.swift; sourceTree = "<group>"; };
 		5FA5F7C2286E33040007A804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5FA5F7CB2871ADB60007A804 /* HobbyPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbyPresentation.swift; sourceTree = "<group>"; };
 		5FCBCA6E285C64DD00B214DA /* WeHobby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeHobby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FCBCA71285C64DD00B214DA /* WeHubbyTestsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeHubbyTestsApp.swift; sourceTree = "<group>"; };
 		5FCBCA73285C64DD00B214DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				436C59832866131B002045CA /* HobbyView.swift */,
+				5FA5F7CB2871ADB60007A804 /* HobbyPresentation.swift */,
 				436C598528661331002045CA /* HobbyDetailView.swift */,
 				436C59872866134C002045CA /* TutosDetailRaw.swift */,
 				436C598928661371002045CA /* ListeTutosDetailView.swift */,
@@ -301,6 +304,7 @@
 				5F818196285CC4AB003E72B2 /* DetailsEvents.swift in Sources */,
 				5FD55B92286B341500C400D4 /* EditMypROFILE.swift in Sources */,
 				7BD1F2AA2864491100EC2401 /* MessageView.swift in Sources */,
+				5FA5F7CC2871ADB60007A804 /* HobbyPresentation.swift in Sources */,
 				5FEEAC73286076D00056D575 /* listeHobby.swift in Sources */,
 				C77524692863CF6D0020368E /* DetailsCommunityView.swift in Sources */,
 				5F297ED62861C3730045E8D1 /* ListeCategoriesHobbies.swift in Sources */,

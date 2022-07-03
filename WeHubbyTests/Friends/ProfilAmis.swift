@@ -150,29 +150,29 @@ struct ProfilAmis: View {
                             
                             
                                 
-                            Text(friend.userTag[0].rawValue)
+                            Text(friend.userTag[0].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
-                            Text(friend.userTag[1].rawValue)
+                            Text(friend.userTag[1].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
-                            Text(friend.userTag[2].rawValue)
+                            Text(friend.userTag[2].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
                             }
                         
