@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ListeCategoriesHobbies: View {
     var body: some View {
-        NavigationView {
+//        NavigationView {
         VStack {
             
             
@@ -37,8 +37,8 @@ struct ListeCategoriesHobbies: View {
 
             }
             }
-        .navigationBarHidden(true)
-    }
+//        .navigationBarHidden(true)
+//    }
 }
 }
 struct ListeCategoriesHobbies_Previews: PreviewProvider {

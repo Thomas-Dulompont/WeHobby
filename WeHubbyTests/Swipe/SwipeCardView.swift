@@ -74,12 +74,12 @@ struct SwipeCardView: View {
                     Spacer()
                     //Button for LinkView
                     NavigationLink {
-                        HobbyView(loisirs: loisirs, listTutos: listTutos)
+                        HobbyPresentation(hobbi: loisirs)
                     } label: {
                         Text("DECOUVRIR")
                             .font(.title3.bold())
                             .frame(width: 150, height: 55)
-                            .background(Color("CustomColorGreen"))
+                            .background(Color.accentColor)
                             .cornerRadius(30)
                             .foregroundColor(Color.white)
                             .shadow(color: Color.gray.opacity(0.25), radius: 4, x: 0, y: 4)

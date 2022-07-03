@@ -13,21 +13,23 @@ struct TutosDetailRaw: View {
     
     var body: some View {
 
-        HStack {
+        HStack(spacing: 20) {
             Image(listTutos.tutoImage)
                 .resizable()
+                .scaledToFill()
                 .frame(width: 130.0, height: 100.0)
-                .scaledToFit()
                 .clipped()
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .shadow(color: Color.gray.opacity(0.5), radius: 4, x: 0, y: 5)
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 8){
                 Text(listTutos.tutoTitle)
                     .font(.body)
+                
                 Text(listTutos.creator)
                     .font(.callout)
                     .fontWeight(.thin)
+                    .italic()
             }
         Spacer()
             

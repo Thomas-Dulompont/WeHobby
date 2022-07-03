@@ -20,7 +20,7 @@ struct listeHobby: View {
             
             List(hobby) { hobb in
                 NavigationLink {
-                    HobbyView(loisirs: hobb, listTutos: listTutos)
+                    HobbyPresentation(hobbi: hobb)
                 } label: {
                 HStack{
             Image(hobb.hobbyPic)

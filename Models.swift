@@ -44,7 +44,7 @@ enum Tags: String {
     case sport = "Sport"
     case crea = "Création"
     case sante = "Santé"
-    case art = "Artistique"
+    case art = "Art"
     case epicur = "Epicurieux"
     case nuit = "Nocturne"
     case aventu = "Aventure"
@@ -62,7 +62,7 @@ struct Hobbies : Identifiable {
     var hobbyPic : String
     var hobbyTags : [Tags]
     var hobbyEvents : [Events]
-    var hobbyComs : [Comments]
+    var hobbyComs : [CommentsHobby]
     var tutoHobby : [TutosDetail]
     var category: Categoriz
 }
@@ -128,8 +128,7 @@ class Events : Identifiable, Equatable, ObservableObject {
 
 struct Comments : Identifiable {
     var id = UUID()
-    var userPics: String
-    var userName: String
+    var userComment: Friends
     var commDetail: String
 }
 
@@ -209,4 +208,14 @@ let filteredEventsCategories = evenements.filter { event in
 }
 
 return filteredEventsCategories
+
+}
+
+
+func filterEventByHobbies (hobby: Hobbies) -> [Events] {
+    let filteredEventByHobbies = evenements.filter { events in
+        events.eventHobby.id == hobby.id
+    }
+    
+    return filteredEventByHobbies
 }

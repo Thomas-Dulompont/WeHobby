@@ -13,8 +13,13 @@ struct ListeTutosDetail: View {
     
     var body: some View {
         ScrollView {
+            
+            VStack(spacing: 20){
             ForEach(listTutos) { listTuto in
                 TutosDetailRaw(listTutos: listTuto)
+                Divider().frame(width: 280)
+            }
+            .padding(.horizontal)
             }
         }
     }

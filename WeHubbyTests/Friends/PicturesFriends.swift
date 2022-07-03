@@ -16,25 +16,52 @@ struct PicturesFriends: View {
     ]
     var user: Friends
     
+    @State private var isOpen = false
+    
+    var width: CGFloat = UIScreen.main.bounds.width
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         
         VStack{
-//Spacer()
-        ScrollView(.vertical, showsIndicators: false){
-            ZStack {
-                LazyVGrid(columns: columns, alignment: .center, spacing: 2) {
-            
-            ForEach(user.pictures, id: \.self) { picture in
-                
-                Image(picture)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 125, height:125)
-                    .clipped()
-            }
-
-        }
-            }
+            //Spacer()
+            ScrollView(.vertical, showsIndicators: false){
+                ZStack {
+                    LazyVGrid(columns: columns, alignment: .center, spacing: 4) {
+                        
+                        ForEach(user.pictures, id: \.self) { picture in
+                            
+                            Image(picture)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 127, height:127)
+                                .clipped()
+                                .onTapGesture {
+                                    print("Ranking")
+                                    self.isOpen.toggle()
+                                }
+                                .fullScreenCover(isPresented: $isOpen, content: {
+                                    withAnimation {
+                                        ZStack{
+                                            Button {
+                                                self.isOpen.toggle()
+                                            } label : {
+                                                Image(picture)
+                                                    .resizable()
+                                                    .scaledToFit()
+                                                    .frame(width: width)
+                                                    .clipped()
+                                                
+                                            }.background(.ultraThinMaterial)
+                                        }
+                                    }
+                                })
+                        }
+                        
+                        
+                    }
+                }
             }
         }
     }

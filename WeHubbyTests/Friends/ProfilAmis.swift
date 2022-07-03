@@ -84,18 +84,10 @@ struct ProfilAmis: View {
                     HStack(spacing: 30){
                         Button {
                             
-                            if imageName == "person.fill.badge.plus" {
-                                
-                            imageName = "person.fill.badge.minus"
-                            } else {
-                                
-                            imageName = "person.fill.badge.plus"
-                            }
                             
-//                            user.isFriend.toggle()
                             
                         } label : {
-                            Image(systemName: imageName)
+                            Image(systemName: friend.isFriend == true ? "person.fill.badge.minus" : "person.fill.badge.plus")
                                 .font(.system(size:32))
                                 .foregroundColor(.white)
                                 .padding()
@@ -119,8 +111,9 @@ struct ProfilAmis: View {
                         
                         
                         
-                        Button {
-                            
+                        NavigationLink {
+                            MessageView(user: friend)
+
                         } label : {
                             Image(systemName: "ellipsis.bubble.fill")
                                 .font(.system(size:32))
@@ -157,29 +150,29 @@ struct ProfilAmis: View {
                             
                             
                                 
-                            Text(friend.userTag[0].rawValue)
+                            Text(friend.userTag[0].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
-                            Text(friend.userTag[1].rawValue)
+                            Text(friend.userTag[1].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
-                            Text(friend.userTag[2].rawValue)
+                            Text(friend.userTag[2].rawValue.uppercased())
                                     .fontWeight(.semibold)
                                     .padding(.vertical, 5.0)
                                     .padding(.horizontal, 10.0)
                                     .background(Color("CustomColorBlue"))
                                     .foregroundColor(.white)
-                                    .cornerRadius(10)
+                                    .cornerRadius(8)
                             
                             }
                         

@@ -14,6 +14,7 @@ struct ListCommentsScrollView: View {
             ScrollView {
                 ForEach(listCommentsHobby) { commentsHobby in
                     CommentRawView(commentsHobby: commentsHobby)
+                    Divider().frame(width:260)
                 }
             }
         }

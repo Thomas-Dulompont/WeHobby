@@ -12,23 +12,30 @@ struct CommentRawView: View {
     let commentsHobby: CommentsHobby
     var body: some View {
   
-   HStack(alignment: .top) {
+        
+        HStack(spacing: 20) {
+       
        Image(commentsHobby.user.userPicture)
-                       .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle())
-                       .frame(width: 40.0, alignment: .leading)
-                       .overlay(
-                            Circle().stroke(Color.gray, lineWidth: 1))
-                        .shadow(radius: 3)
+           .resizable()
+           .scaledToFit()
+           .frame(width: 70)
+           .clipShape(Circle())
+           .clipped()
+           .shadow(radius: 5)
                    
-                   VStack(alignment: .leading) {
+       VStack(alignment: .leading, spacing: 0) {
                        Text(commentsHobby.user.userPsedo)
+                           .foregroundColor(.accentColor)
+                       
                         Text(commentsHobby.commDetailHobby)
+                           .font(.system(size: 14))
+                           .foregroundColor(.black)
+                           .frame(width: 260, height: 60)
+                           .multilineTextAlignment(.leading)
+                           .padding(.trailing, 10)
                    }
                }
-               .frame(maxWidth: .infinity, alignment: .leading)
-               .padding()
+   .padding(.horizontal)
            }
         }
 
