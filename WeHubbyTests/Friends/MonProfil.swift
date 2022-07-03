@@ -160,10 +160,13 @@ struct MonProfil: View {
                                 HStack(spacing: 20){
                                     
                                     ForEach(user.favoriteCategory) { favoris in
-                                        
+                                        NavigationLink{
+                                            listeHobby(hobby: filterHobbies(categorie: favoris))
+                                        } label: {
                                         Image(favoris.picCategory)
                                             .resizable()
                                             .frame(width: 40, height: 40)
+                                        }
                                     }
                                     Spacer()
                                 }

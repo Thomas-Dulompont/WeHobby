@@ -223,9 +223,8 @@ struct DetailsEvents: View {
                             }
                         }
                         
-                        
                     }
-                    .padding(.bottom,10)
+                    .frame(height: 68)
                     .padding(.leading,15)
                     
                     HStack {
@@ -270,6 +269,21 @@ struct DetailsEvents: View {
                             Divider().frame(width: 260)
                         }
                         .padding(.horizontal, 20)
+                        
+                        HStack {
+                            
+                            Spacer()
+                            
+                            Button {
+                                
+                            } label : {
+                            Text("Ajouter un commentaire")
+                                .foregroundColor(.accentColor)
+                                .fontWeight(.bold)
+                                .underline()
+                            }
+                        }
+                        .padding(.trailing, 30)
                     }
                     .padding(.bottom, 20)
                 }

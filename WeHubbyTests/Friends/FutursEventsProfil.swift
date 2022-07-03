@@ -26,7 +26,9 @@ struct FutursEventsProfil: View {
                         ForEach(evenements) { event in
                             
                             if event.participate == true {
-                                
+                                NavigationLink {
+                                    DetailsEvents(event: event)
+                                } label: {
                                 VStack {
                                     
                                     Image(event.eventPicture)
@@ -37,8 +39,9 @@ struct FutursEventsProfil: View {
                                     
                                     Text(event.eventName)
                                         .fontWeight(.thin)
+                                        .foregroundColor(.black)
                                         
-                                    
+                                }
                                 }
                             }
                         }
